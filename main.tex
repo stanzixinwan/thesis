@@ -7,6 +7,7 @@
 \usepackage{hyperref}
 \usepackage[round]{natbib}
 \usepackage{amsmath}
+\usepackage{svg}
 
 \renewcommand{\bibsection}{\chapter*{References}\addcontentsline{toc}{chapter}{References}
 }
@@ -291,15 +292,15 @@ And that pattern might also be related to the relative locations of the V1 cells
   \centering
   \includegraphics[width=1\linewidth]{figures/_ferret_stimulus.pdf}
   \caption{Experimental setup and visual stimulus design. 
-  \textit{Left}: Schematic of the two-photon imaging preparation, 
+  \textit{A}: Schematic of the two-photon imaging preparation, 
   in which a head-fixed ferret views stimuli presented on a monitor 
   while neural activity is recorded through a cranial window. 
-  \textit{Center}: Example drifting grating stimulus used to 
+  \textit{B}: Example drifting grating stimulus used to 
   characterize neuronal tuning. 
-  \textit{Right}: The stimulus set consisted of a factorial 
+  \textit{C}: The stimulus set consisted of a factorial 
   combination of 3-5 spatial frequencies (SF), 5-6 temporal 
   frequencies (TF), and 4 orientations / 8 directions (0$^\circ$, 45$^\circ$, 
-  135$^\circ$ and etc.), yielding at least 120 unique stimulus conditions in a 3-D "cube".}
+  135$^\circ$ and etc.), yielding at least 120 unique stimulus conditions in a 3-D cube.}
   \label{fig:stiumulus design}
 \end{figure}
 
@@ -307,10 +308,10 @@ And that pattern might also be related to the relative locations of the V1 cells
   \centering
   \includegraphics[width=1\linewidth]{figures/_twophoton_responses.pdf}
   \caption{Two-photon calcium imaging of neuronal responses in ferret 
-  visual cortex. \textit{Left}: Field of view showing fluorescently 
+  visual cortex. \textit{A}: Field of view showing fluorescently 
   labeled neurons imaged with a two-photon microscope. 
-  \textit{Right}: Fluorescence response traces ($\delta$F/F) for a sample of 16 
-  individual cells (ref t00007) in response to visual stimulation. 
+  \textit{B}: Fluorescence response traces ($\delta$F/F) for the first two
+  individual cells in response to visual stimulation. 
   Solid horizontal lines indicate baseline; dashed lines indicate 
   $\pm$1 standard deviation. Error bars represent Standard Error of the Mean across trials.}
   \label{fig:twophoton_responses}
@@ -320,7 +321,7 @@ And that pattern might also be related to the relative locations of the V1 cells
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=1\linewidth]{figures/DSI_OSI_Heatmap.png}
+    \includegraphics[width=1\linewidth]{figures/_DSI_OSI_vs_TF.pdf}
     \caption{Population distributions of direction and orientation 
     selectivity as a function of temporal frequency, across five spatial frequencies. Each panel shows a 2D histogram (color indicates cell count) of selectivity index versus TF (Hz) for cells with $p \leq 0.05$. \textit{Top row}: Direction selectivity index (DSI) versus TF for SF = 0.04, 0.08, 0.15, 0.32, and 0.64 cyc/deg (left to right; $n = 399, 386, 328, 395, 404$ cells, respectively). \textit{Bottom row}: Orientation selectivity index (OSI) versus TF for the same spatial frequencies and cell counts.}
     \label{fig:dsi_osi_heatmaps}
