@@ -67,66 +67,76 @@ abstract body
 \startbody
 
 \chapter[Introduction]{Introduction}
-How the brain transforms the continuous flux of light into a coherent perception of a world in motion is one of the central questions in systems neuroscience. At the core of this challenge lies the primary visual cortex (V1), the earliest cortical stage of visual processing, which must encode not merely static features such as contrast and orientation but also the dynamic properties of moving stimuli—their speed, direction, and spatiotemporal structure. Understanding how V1 neurons collectively represent these multiple dimensions, and how this representation is organized across the cortical surface, remains a fundamental open question in sensory neuroscience.
-\\
-
-
-% ----------------------------------------------------------------
-\subsection{V1 as a Spatiotemporal Filter}
-% ----------------------------------------------------------------
-
-Early pioneering work established that V1 neurons function as spatiotemporal filters, selectively responding to oriented edges at specific spatial and temporal frequencies
-\citep{Hubel1962, Albrecht1980}. These neurons extract local features from the visual scene through their tuned receptive fields, forming the foundational building blocks of visual perception. The perception of motion, however, demands more than simple feature detection: it requires the integration of spatial and temporal signals to extract quantities such as velocity, which are not encoded in the raw photoreceptor output \citep{Adelson1985}. Consequently, characterizing the spatiotemporal tuning properties of V1 neurons---and their organization across the cortex---has become a central objective in visual neuroscience.
-\\
-
-% ----------------------------------------------------------------
-\subsection{The Ferret as a Model System}
-% ----------------------------------------------------------------
-
-A key consideration in studying cortical organization is the
-choice of experimental model. Unlike rodents, which exhibit a
-``salt-and-pepper'' distribution of neuronal selectivity with no
-systematic spatial organization \citep{Ohki2005, Ohki2007},
-carnivores such as ferrets and cats possess a columnar
-architecture in which neurons sharing similar tuning preferences
-are clustered into coherent functional maps across the cortical
-surface \citep{Bonhoeffer1991, Weliky1996}.
-The domestic ferret (\textit{Mustela putorius furo}) is
-particularly advantageous for several reasons. First, its
-gyrencephalic cortex exposes broad, flat gyral surfaces---most
-notably the lateral gyrus---that are directly accessible to
-optical imaging \citep{Schwerin2017}. Second, the ferret's
-protracted postnatal visual development provides a unique
-experimental window: at eye opening (approximately postnatal
-day 30--33), V1 neurons are orientation-selective but lack
-direction selectivity, which emerges progressively over subsequent
-days of visual experience \citep{Clemens2012, Li2008}.
-This developmental trajectory allows researchers to dissect the
-contributions of innate connectivity and experience-dependent
-plasticity to functional map formation---a separation that is
-considerably more difficult in the mouse, where many functional
-properties are established prior to or rapidly after eye opening
-\citep{Yu2025}.
-\\
-
+How the brain transforms the continuous flux of light into a coherent
+perception of a world in motion is one of the central questions in
+systems neuroscience. At the core of this challenge lies the primary
+visual cortex (V1), the earliest cortical stage of visual processing,
+which must encode not merely static features such as contrast and
+orientation but also the dynamic properties of moving stimuli:
+direction, speed, and spatiotemporal structure. Understanding how V1
+neurons collectively represent these multiple dimensions, and how this
+representation is organized across the cortical surface, remains a
+fundamental open question in sensory neuroscience.
 
 % ----------------------------------------------------------------
-\subsection{The Physics of Motion: Spatial Frequency,
+\section{V1 as a Spatiotemporal Filter}
+% ----------------------------------------------------------------
+
+Early pioneering work established that V1 neurons function as
+spatiotemporal filters, selectively responding to oriented edges at
+specific spatial and temporal frequencies \citep{Hubel1962,
+Albrecht1981}. These neurons extract local features from the visual
+scene through their tuned receptive fields, forming the foundational
+building blocks of visual perception. The perception of motion,
+however, demands more than simple feature detection: it requires the
+integration of spatial and temporal signals to extract quantities such
+as velocity, which are not encoded in the raw photoreceptor output
+\citep{Adelson1985}. Consequently, characterizing the spatiotemporal
+tuning properties of V1 neurons and their organization across the
+cortex has become a central objective in visual neuroscience.
+
+% ----------------------------------------------------------------
+\section{The Ferret as a Model System}
+% ----------------------------------------------------------------
+
+A key consideration in studying cortical organization is the choice of
+experimental model. Unlike rodents, which exhibit a ``salt-and-pepper''
+distribution of neuronal selectivity with no systematic spatial
+organization \citep{Ohki2005, Ohki2007}, carnivores such as ferrets
+and cats possess a columnar architecture in which neurons sharing
+similar tuning preferences are clustered into coherent functional maps
+across the cortical surface \citep{Bonhoeffer1991, Weliky1996}.
+The domestic ferret (\textit{Mustela putorius furo}) is particularly
+advantageous for several reasons. First, its gyrencephalic cortex
+exposes broad, flat lateral gyrus that are directly accessible to optical imaging
+\citep{Issa1999}. Second, the ferret's protracted postnatal visual
+development provides a unique experimental window: at eye opening
+(approximately postnatal day 30--33), V1 neurons are
+orientation-selective but lack direction selectivity, which emerges
+progressively over subsequent days of visual experience
+\citep{Clemens2012, Li2008}. This developmental trajectory allows
+researchers to dissect the contributions of innate connectivity and
+experience-dependent plasticity to functional map formation---a
+separation that is considerably more difficult in the mouse, where many
+functional properties are established prior to or rapidly after eye
+opening \citep{Yu2025}.
+
+% ----------------------------------------------------------------
+\section{The Physics of Motion: Spatial Frequency,
   Temporal Frequency, and Speed}
 % ----------------------------------------------------------------
 
 To understand how the visual cortex encodes motion, it is first
-necessary to define the physical parameters of moving stimuli.
-The standard probe in visual neuroscience is the drifting
-sinusoidal grating, which allows visual information to be
-decomposed into two orthogonal dimensions.
-\textbf{Spatial frequency} (SF), measured in cycles per degree
-of visual angle ($\text{c/deg}$), quantifies the density of the
-luminance pattern: high SF corresponds to fine textures, while
-low SF corresponds to coarse, broad features.
-\textbf{Temporal frequency} (TF), measured in cycles per second
-($\text{Hz}$), quantifies the rate at which the pattern modulates
-over time at a fixed location.
+necessary to define the physical parameters of moving stimuli. The
+standard probe in visual neuroscience is the drifting sinusoidal
+grating, which allows visual information to be decomposed into two
+orthogonal dimensions. \textbf{Spatial frequency} (SF), measured in
+cycles per degree of visual angle ($\text{c/deg}$), quantifies the
+density of the luminance pattern: high SF corresponds to fine textures,
+while low SF corresponds to coarse, broad features. \textbf{Temporal
+frequency} (TF), measured in cycles per second ($\text{Hz}$),
+quantifies the rate at which the pattern modulates over time at a fixed
+location.
 
 Critically, the perceptual speed of a moving grating is not an
 intrinsic property of the stimulus but a derived relationship:
@@ -137,150 +147,175 @@ intrinsic property of the stimulus but a derived relationship:
   \label{eq:speed}
 \end{equation}
 %
-This equation reveals a fundamental ambiguity inherent in motion sensing. A neuron responding to a given temporal modulation rate
-cannot, in isolation, determine whether it is driven by a fine-textured object moving slowly or a coarse object moving rapidly. Resolving this ambiguity requires neural mechanisms sensitive to the ratio $\text{TF}/\text{SF}$, rather than to either dimension independently \citep{Adelson1985, Davies2016}. The distinction between neurons encoding individual spatiotemporal components and those encoding speed
-\textit{per se} forms the conceptual backbone of the present
-thesis.
-\\
+This equation reveals a fundamental ambiguity inherent in motion
+sensing. A neuron responding to a given temporal modulation rate cannot,
+in isolation, determine whether it is driven by a fine-textured object
+moving slowly or a coarse object moving rapidly. Resolving this
+ambiguity requires neural mechanisms sensitive to the ratio
+$\text{TF}/\text{SF}$, rather than to either dimension independently
+\citep{Adelson1985}. This relationship motivates a central
+question about V1 coding: if temporal and spatial frequency interact to
+define speed, do V1 neurons encode direction and orientation in a manner
+that is stable across changes in TF and SF, or do these fundamental
+preferences themselves vary with the spatiotemporal parameters of the
+stimulus?
 
 % ----------------------------------------------------------------
-\subsection{Functional Architecture of Ferret V1:
+\section{Functional Architecture of Ferret V1:
   Orientation and Direction Maps}
 % ----------------------------------------------------------------
 
-The columnar organization of ferret V1 is defined by two
-superimposed large-scale functional maps. The
-\textbf{orientation preference (OP) map} describes the orderly
-arrangement of neurons tuned to specific edge orientations across
-the cortical surface \citep{Bonhoeffer1991}. Within this map,
-iso-orientation domains---extended cortical patches where neuronal
-orientation preference changes gradually---are punctuated by
-topological singularities known as \textit{pinwheel centers}, at
-which all orientations converge at a single locus. These
-singularities are a mathematical necessity in any continuous map
-of a cyclic variable \citep{Ohki2006}. Neurons proximal to
-pinwheel centers tend to exhibit broader tuning and lower
-orientation selectivity compared to those in iso-orientation
-domains, reflecting heterogeneous input convergence at these
-singularities \citep{Nauhaus2008}.
+The columnar organization of ferret V1 is defined by two superimposed
+large-scale functional maps. The \textbf{orientation preference (OP)
+map} describes the orderly arrangement of neurons tuned to specific
+edge orientations across the cortical surface \citep{Bonhoeffer1991}.
+Within this map, iso-orientation domains, where extended cortical patches
+where neuronal orientation preference changes gradually, are punctuated
+by topological singularities known as \textit{pinwheel centers}, at
+which all orientations converge at a single locus. These singularities
+are a mathematical necessity in any continuous map of a cyclic variable
+\citep{Ohki2006}. Neurons proximal to pinwheel centers tend to exhibit
+broader tuning and lower orientation selectivity compared to those in
+iso-orientation domains, reflecting heterogeneous input convergence at
+these singularities \citep{Nauhaus2008}.
 
-Superimposed upon the orientation map is the
-\textbf{direction selectivity map}. Because direction is a vector
-quantity-leftward and rightward motion are distinct-direction
-maps are characterized by sharp ``fractures'': lines across the
-cortex at which the preferred direction abruptly reverses by
-$180^{\circ}$. In ferret V1, these fractures typically align with
-the centers of iso-orientation domains, partitioning each domain
-into two sub-regions preferring opposite directions of motion
-\citep{Weliky1996, Clemens2012}. This tessellation ensures
-comprehensive coverage of the orientation-direction feature space
-within any local cortical module. Recent functional ultrasound
-imaging has further revealed that orientation domains are not
-simple cylinders but adopt a cone-shaped geometry in three
-dimensions, with implications for how tuning properties are
-integrated across cortical layers \citep{Hu2023}.
-\\
+Superimposed upon the orientation map is the \textbf{direction
+selectivity map}. Because direction is a vector quantity (i.e. leftward and
+rightward motion are distinct) direction maps are characterized by
+sharp ``fractures'': lines across the cortex at which the preferred
+direction abruptly reverses by $180^{\circ}$. In ferret V1, these
+fractures typically align with the centers of iso-orientation domains,
+partitioning each domain into two sub-regions preferring opposite
+directions of motion \citep{Weliky1996, Clemens2012}. This tessellation
+ensures comprehensive coverage of the orientation--direction feature
+space within any local cortical module. Recent functional ultrasound
+imaging has further revealed that orientation domains are not simple
+cylinders but adopt a cone-shaped geometry in three dimensions, with
+implications for how tuning properties are integrated across cortical
+layers \citep{Hu2023}.
 
 % ----------------------------------------------------------------
-\subsection{The Emergence of Speed Tuning in V1}
+\section{Stability of Direction and Orientation Preference
+  Across Stimulus Conditions}
 % ----------------------------------------------------------------
 
-A longstanding view held that explicit speed tuning---the encoding
-of object velocity invariant to the spatial pattern of the
-stimulus---was a property of extrastriate areas, most prominently
-the middle temporal area (MT/V5), rather than V1 itself. Under
-this view, V1 neurons were modeled as spatiotemporally separable
-filters: the preferred SF and preferred TF were considered
-independent parameters, such that a neuron's preferred speed
-varied with the spatial structure of the stimulus
-\citep{Priebe2006}. This separability reflects the architecture of
-geniculate inputs, which faithfully transmit spatiotemporal
-components without integrating them into a speed signal.
+The orientation and direction maps described above are typically
+characterized at a single, fixed spatiotemporal frequency. An implicit
+assumption underlying much of this literature is that the preferences
+revealed by such measurements are stable properties of V1 neurons---that
+a cell tuned to rightward motion at one temporal frequency will remain
+tuned to rightward motion at another. This assumption, however, has
+been directly challenged by experimental evidence.
 
-However, this view has been substantially revised.
-Electrophysiological studies in macaque V1 identified a population
-of complex cells whose spatiotemporal tuning is
-\textit{inseparable}: as the SF of the stimulus increases, the
-preferred TF increases proportionally, maintaining a constant
-preferred speed across spatial patterns \citep{Priebe2006}. The
-prevailing mechanistic account proposes that inseparable complex
-cells arise through the nonlinear pooling of separable simple cell
-inputs: a complex cell integrating simple cells whose preferred TF
-and SF are positively correlated will exhibit a tuning function
-tilted in spatiotemporal frequency space---the hallmark of speed
-selectivity \citep{Priebe2006, Davies2016}.
+Electrophysiological recordings in cat V1 demonstrated that the
+preferred direction of motion for a substantial fraction of neurons
+shifts substantially when temporal frequency is varied
+\citep{Moore2005}. Some cells reverse their preferred direction
+entirely---responding preferentially to rightward motion at low TF but
+leftward motion at high TF. This finding implies that the direction map,
+as measured at a single TF, may be an incomplete or misleading
+description of the true directional tuning landscape of V1. In the same
+study, orientation preference was reported to be comparatively stable
+across TF, leading to the conclusion that orientation and direction are
+encoded through partially dissociable mechanisms in V1 \citep{Moore2005}.
 
-Critically, recent large-scale two-photon calcium imaging from our
-laboratory has demonstrated that speed-tuned neurons in the ferret
-V1 are not randomly distributed across the cortical surface but
-form spatially clustered ``speed hot spots'' \citep{Casanova2025}.
-This discovery establishes that a functional map for speed exists
-in V1, challenging the classical view that speed is computed
-exclusively in extrastriate cortex. Nevertheless, the geometric
-relationship between these speed domains and the established
-orientation and direction maps remains entirely uncharacterized.
-\\
+These findings, however, were established using single-unit
+electrophysiology in anesthetized cats, which permits only sparse
+sampling of the neural population and does not resolve the spatial
+organization of TF-dependent preference shifts across the cortical
+surface. Whether similar phenomena occur in ferret V1, whether
+orientation preference is truly invariant to TF changes or whether
+earlier conclusions reflected limited sampling, and whether neurons
+with large or small preference shifts are spatially clustered or
+intermingled on the cortical map, remain open questions that the
+present study is positioned to address.
 
 % ----------------------------------------------------------------
-\subsection{Research Gaps and Specific Aims}
+\section{Speed Tuning in V1: Motivation and Context}
 % ----------------------------------------------------------------
 
-Although the orientation and direction architecture of ferret V1
-is well established \citep{Weliky1996, Bonhoeffer1991, Ohki2006},
-the topographic organization of speed tuning---and its spatial
-relationship to the existing columnar architecture---has remained
-largely unexplored. Prior electrophysiological recordings
-\citep{Priebe2006}, limited by sparse electrode sampling,
-confirmed the existence of speed-tuned neurons in V1 but could
-not resolve their spatial arrangement. While the identification
-of speed hot spots represents a critical step forward
-\citep{Casanova2025}, fundamental questions remain. It is
-presently unknown whether speed domains are randomly superimposed
-on the orientation--direction architecture or are systematically
-anchored to specific structural landmarks, such as pinwheel
-centers or direction fractures. Moreover, the full topology of
-the joint Direction~$\times$~SF~$\times$~TF tuning landscape has
-not been comprehensively mapped at single-cell population
-resolution.
+Beyond the question of preference stability, the joint encoding of SF
+and TF by V1 neurons is relevant to a deeper computational question:
+whether V1 encodes stimulus speed. A longstanding view held that
+explicit speed tuning---the encoding of object velocity invariant to the
+spatial pattern of the stimulus---was a property of extrastriate areas,
+most prominently the middle temporal area (MT/V5), rather than V1
+itself. Under this view, V1 neurons were modeled as spatiotemporally
+separable filters: the preferred SF and preferred TF were considered
+independent parameters, such that a neuron's preferred speed varied with
+the spatial structure of the stimulus \citep{Priebe2006}.
 
-This thesis addresses these gaps through rigorous computational
-analysis of large-scale two-photon calcium imaging datasets
-acquired from ferret primary visual cortex, spanning the complete
-spatiotemporal parameter space. Three specific aims are pursued:
+However, this view has been substantially revised. Electrophysiological
+studies in macaque V1 identified a population of complex cells whose
+spatiotemporal tuning is \textit{inseparable}: as the SF of the
+stimulus increases, the preferred TF increases proportionally,
+maintaining a constant preferred speed across spatial patterns
+\citep{Priebe2006}. Recent large-scale two-photon calcium imaging from
+our laboratory has further demonstrated that speed-tuned neurons in
+ferret V1 are not randomly distributed but form spatially clustered
+domains \citep{Casanova2025}, establishing that a functional map for
+speed exists within V1 itself. The question of how such speed-selective
+organization relates to the direction and orientation maps---and
+particularly, how TF-dependent shifts in direction preference might
+reflect or predict the emergence of speed tuning at the population
+level---provides important motivation for the present work, though its
+full characterization lies beyond the scope of this thesis.
+
+% ----------------------------------------------------------------
+\section{Research Gaps and Specific Aims}
+% ----------------------------------------------------------------
+
+Although the orientation and direction architecture of ferret V1 is well
+established at the map level \citep{Weliky1996, Bonhoeffer1991,
+Ohki2006}, several critical gaps remain in our understanding of how
+these maps behave across varying stimulus conditions. The
+TF-dependence of direction and orientation preference has been
+demonstrated in cat using sparse single-unit recordings, but has not
+been examined in ferret V1, has not been observed at the single-cell
+population resolution afforded by two-photon calcium imaging, and has
+never been analyzed in terms of the spatial organization of TF-induced
+preference shifts across the cortical map. It is unknown whether cells
+that change their direction preference with TF are spatially clustered
+or randomly interspersed among stable cells, whether the overall map
+topology is preserved across TF conditions, and whether orientation
+preference, considered TF-invariant by previous studies \citep{Moore2005}, 
+shows systematic shifts under the broader stimulus conditions examined here.
+
+This thesis addresses these gaps through computational analysis of
+large-scale two-photon calcium imaging data acquired from the ferret primary
+visual cortex, using drifting grating stimuli spanning multiple
+directions, spatial frequencies, and temporal frequencies. Two specific
+aims are pursued:
 
 \begin{enumerate}
   \item[\textbf{Aim~1.}]
-    \label{aim:sti}
-    To characterize the population-level distribution of
-    spatiotemporal frequency tuning in ferret V1, deriving robust
-    Speed Tuning Indices (STI) for thousands of individual neurons
-    across the full Direction~$\times$~SF~$\times$~TF parameter
-    volume.
+    \label{aim:cellevel}
+    To characterize, at the level of individual neurons, how preferred
+    direction and preferred orientation change as a function of temporal
+    frequency across a range of spatial frequencies. Specifically, to
+    quantify the fraction of cells exhibiting large TF-dependent
+    direction shifts and to determine whether orientation preference, 
+    contrary to prior reports, also shifts systematically with TF.
 
   \item[\textbf{Aim~2.}]
-    \label{aim:geometry}
-    To map the cortical geometry of speed domains and quantify
-    their spatial relationship to established orientation map
-    features---specifically, to test whether speed hot spots are
-    preferentially aligned with pinwheel centers, iso-orientation
-    domains, or direction fractures.
-
-  \item[\textbf{Aim~3.}]
-    \label{aim:unified}
-    To determine whether the joint organization of speed,
-    orientation, and direction is consistent with a unified
-    cortical strategy for multidimensional feature representation,
-    or whether these maps are geometrically independent.
+    \label{aim:maplevel}
+    To examine whether TF-induced preference shifts are spatially
+    organized on the cortical surface. Specifically, to determine
+    whether the large-scale topology of direction and orientation maps
+    is preserved across temporal frequencies, whether cells with large
+    preference shifts are spatially clustered or intermixed with stable
+    cells, and whether the magnitude of TF-induced shifts is
+    predictable from a cell's location relative to established map
+    features.
 \end{enumerate}
 
-By establishing the geometric relationship between speed and
-orientation maps, this thesis aims to reframe our understanding
-of V1---from a bank of spatiotemporal filters to a sophisticated
-computational engine that actively synthesizes the perception of
-speed through structured local circuit motifs at the earliest
-stage of cortical visual processing.
-\\
-
+Together, these aims provide a population-level, spatially resolved
+characterization of how temporal frequency modulates the directional
+and orientational tuning landscape of ferret V1. The findings
+contribute to a revised understanding of V1 functional maps-not as
+fixed representations of feature preferences, but as stimulus-dependent
+structures whose organization may reflect the underlying spatiotemporal
+computations performed by local cortical circuits.
 
 \chapter[short-version]{Verbose version: The effect of TF on Direction tuning}
 
@@ -350,7 +385,8 @@ into cortical layer~2/3 of primary visual cortex (V1)
 18--34~days prior to imaging
 (Table~\ref{tab:animals}). On the day of imaging, a
 craniotomy was performed over V1 and a glass cranial window
-was implanted to provide optical access.
+was implanted to provide optical access
+(Figure~\ref{fig:experimental_setup}A).
 
 In vivo two-photon calcium imaging was performed using a
 [microscope model] two-photon microscope equipped with a
@@ -360,9 +396,9 @@ at [frame rate]~Hz with a field of view of approximately
 [X~$\times$~Y]~$\mu$m. Each FOV typically contained
 [range, e.g., 50--200] identifiable neurons.
 
-The computational analyses presented in this thesis ---
+The computational analyses presented in this thesis
 including cell identification, extraction of tuning curves,
-and all spatial analyses --- were performed by the author.
+and all spatial analyses were performed by the author.
 
 % ----------------------------------------------------------------
 \section{Visual Stimuli}
@@ -382,11 +418,11 @@ equally spaced directions ($0^\circ$, $45^\circ$, $90^\circ$,
 $135^\circ$, $180^\circ$, $225^\circ$, $270^\circ$,
 $315^\circ$), 5 spatial frequencies (0.04, 0.08, 0.15, 0.32,
 and 0.64~cyc/deg), and 5 temporal frequencies (0.5, 1.6, 2.4,
-6.4, and 12.8~Hz). Each unique stimulus condition
+6.4, and 12.8~Hz). (Figure~\ref{fig:experimental_setup}B) Each unique stimulus condition
 (direction~$\times$~SF~$\times$~TF) was presented for
 [duration, e.g., 2]~s, followed by a mean-luminance gray
 screen inter-stimulus interval of [duration, e.g., 1]~s. Each
-condition was repeated 7--8 times in pseudo-random order. A
+condition was repeated 7–8 times in pseudo-random order. A
 blank (mean-luminance) condition of equal duration was
 interleaved to serve as a baseline.
 
@@ -646,44 +682,6 @@ bin. This analysis tests whether nearby cells undergo more
 similar preference shifts than distant cells, which would
 indicate a spatially organized mechanism underlying
 TF-dependent retuning.
-
-[If you used a statistical test: Significance of the
-distance--similarity relationship was assessed using a
-permutation test (N = 1000 shuffles). The null distribution
-was generated by randomly permuting cell identities while
-preserving the spatial layout, thereby destroying any spatial
-structure in $\Delta\text{shift}$ while maintaining the overall
-distribution of pairwise distances.]
-
-
-% ================================================================
-%  BIBLIOGRAPHY ENTRIES NEEDED (add to your .bib file):
-%
-%  VanHooser2015 — Van Hooser SD, Johnson EN, Li Y, et al.
-%    "Practical Methods for In Vivo Cortical Physiology with
-%    2-Photon Microscopy and Bulk Loading of Fluorescent
-%    Calcium Indicator Dyes." Neuroscience Methods, 2015.
-%
-%  Smith2016 — Smith GB, Whitney DE, Fitzpatrick D.
-%    "Viral Injection and Cranial Window Implantation for
-%    In Vivo Two-Photon Imaging." Neuroscience Methods, 2016.
-%
-%  GarciaMurillo2022 — García Murillo D, Rogovin O, et al.
-%    "NDI: A platform-independent data interface and database
-%    for neuroscience physiology and imaging experiments."
-%    eNeuro, 2022.
-%
-%  Brainard1997 — Brainard DH. "The Psychophysics Toolbox."
-%    Spatial Vision, 1997.
-%
-%  Pelli1997 — Pelli DG. "The VideoToolbox software for visual
-%    psychophysics." Spatial Vision, 1997.
-% ================================================================
-
-% ================================================================
-%  Figure placements for Methods
-% ================================================================
-
 
 \chapter{Results}
 
