@@ -43,12 +43,12 @@
 \titleformat*{\section}{\normalsize\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries\vspace{2em}}
 \titleformat*{\subsubsection}{\normalsize\vspace{2em}}
-\titlespacing*{\chapter}{0 pt}{-\baselineskip}{0 pt}
+\titlespacing*{\chapter}{0 pt}{0\baselineskip}{0 pt}
 
 % \newcommand{\sectionbreak}{\clearpage}
-\titlespacing*{\section}{0 pt}{-\baselineskip}{0 pt}
-\titlespacing*{\subsection}{0 pt}{-\baselineskip}{0 pt}
-\titlespacing*{\subsubsection}{0 pt}{-\baselineskip}{0 pt}
+\titlespacing*{\section}{0 pt}{0\baselineskip}{0 pt}
+\titlespacing*{\subsection}{0 pt}{-1\baselineskip}{0 pt}
+\titlespacing*{\subsubsection}{0 pt}{-1\baselineskip}{0 pt}
 \setcounter{secnumdepth}{-1}
 \AtBeginEnvironment{quote}{\singlespacing}
 \pagestyle{plain}

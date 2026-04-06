@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{svg}
 
+
 \renewcommand{\bibsection}{\chapter*{References}\addcontentsline{toc}{chapter}{References}
 }
 
@@ -286,36 +287,403 @@ stage of cortical visual processing.
 Understanding that ori/dir preference might not be fixed as spatial/temporal frequency varies.\\
 And that pattern might also be related to the relative locations of the V1 cells.\\
 
+% ================================================================
+%  CHAPTER: Methods
+%  Thesis — Spatiotemporal Tuning in Ferret V1
+%  Data acquisition by Van Hooser Lab; all analyses by the author.
+%  NOTE: Remaining items in [SQUARE BRACKETS] need your
+%        specific details — ask Prof. Van Hooser if unsure.
+% ================================================================
+
 \chapter{Methods}
 
-\begin{figure}[htbp]
+% ----------------------------------------------------------------
+\section{Animals}
+% ----------------------------------------------------------------
+
+All experimental procedures were approved by the Brandeis
+University Institutional Animal Care and Use Committee (IACUC)
+and performed in accordance with the National Institutes of
+Health \textit{Guide for the Care and Use of Laboratory Animals}.
+Data were collected from 7 juvenile ferrets
+(\textit{Mustela putorius furo}; postnatal day 52--71;
+3 litters) obtained from Marshall Farms (North Rose, NY).
+Animals were housed on a 12:12-h light/dark cycle with
+\textit{ad libitum} access to food and water prior to
+experiments. A summary of all animals and recording sessions
+is provided in Table~\ref{tab:animals}.
+
+\begin{table}[htbp]
   \centering
-  \includegraphics[width=1\linewidth]{figures/_ferret_stimulus.pdf}
-  \caption{Experimental setup and visual stimulus design. 
-  \textit{A}: Schematic of the two-photon imaging preparation, 
-  in which a head-fixed ferret views stimuli presented on a monitor 
-  while neural activity is recorded through a cranial window. 
-  \textit{B}: Example drifting grating stimulus used to 
-  characterize neuronal tuning. 
-  \textit{C}: The stimulus set consisted of a factorial 
-  combination of 3-5 spatial frequencies (SF), 5-6 temporal 
-  frequencies (TF), and 4 orientations / 8 directions (0$^\circ$, 45$^\circ$, 
-  135$^\circ$ and etc.), yielding at least 120 unique stimulus conditions in a 3-D cube.}
-  \label{fig:stiumulus design}
-\end{figure}
+  \caption{Summary of animals and recording sessions. Virus
+    injection dates and imaging dates are listed for each
+    animal. Age refers to postnatal day at the time of imaging.\\}
+  \label{tab:animals}
+  \begin{tabular}{lcccc}
+    \hline
+    Animal (Litter) & Age (days) & Weight (g)
+      & Virus injection & Imaging date \\
+    \hline
+    Ferret 356       & 71 & 661 & 2019-10-09 & 2019-11-12 \\
+    Ferret 363 (A)   & 52 & 410 & 2020-08-03 & 2020-08-21 \\
+    Ferret 363 (B)   & 55 & 310 & 2020-08-04 & 2020-08-24 \\
+    Ferret 363 (C)   & 58 & 440 & 2020-08-04 & 2020-08-27 \\
+    Ferret 365 (A)   & 60 & 440 & 2020-08-10 & 2020-09-04 \\
+    Ferret 365 (B)   & 64 & 450 & 2020-08-11 & 2020-09-08 \\
+    Ferret 365 (C)   & 67 & 540 & 2020-08-10 & 2020-09-11 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+% ----------------------------------------------------------------
+\section{Data Acquisition}
+\label{sec:data_acquisition}
+% ----------------------------------------------------------------
+
+All surgical procedures and two-photon imaging were performed
+by members of the Van Hooser Laboratory; detailed protocols
+have been described previously
+\citep{VanHooser2015, Smith2016}. Briefly, each ferret
+received an injection of an adeno-associated virus (AAV)
+carrying the genetically encoded calcium indicator GCaMP6s
+into cortical layer~2/3 of primary visual cortex (V1)
+18--34~days prior to imaging
+(Table~\ref{tab:animals}). On the day of imaging, a
+craniotomy was performed over V1 and a glass cranial window
+was implanted to provide optical access.
+
+In vivo two-photon calcium imaging was performed using a
+[microscope model] two-photon microscope equipped with a
+Nikon 16$\times$/0.8~NA water-immersion objective. GCaMP6s
+fluorescence was excited at [920]~nm and images were acquired
+at [frame rate]~Hz with a field of view of approximately
+[X~$\times$~Y]~$\mu$m. Each FOV typically contained
+[range, e.g., 50--200] identifiable neurons.
+
+The computational analyses presented in this thesis ---
+including cell identification, extraction of tuning curves,
+and all spatial analyses --- were performed by the author.
+
+% ----------------------------------------------------------------
+\section{Visual Stimuli}
+\label{sec:stimuli}
+% ----------------------------------------------------------------
+
+Visual stimuli were generated using custom MATLAB code with
+the Psychophysics Toolbox
+\citep[Psychtoolbox-3;][]{Brainard1997, Pelli1997} and
+displayed on a [gamma-corrected monitor] positioned
+[distance, e.g., 25]~cm from the contralateral eye.
+[The ipsilateral eye was occluded with an opaque eye patch.]
+
+Stimuli consisted of full-field drifting sinusoidal gratings
+presented at [100]\% contrast. Gratings were shown at 8
+equally spaced directions ($0^\circ$, $45^\circ$, $90^\circ$,
+$135^\circ$, $180^\circ$, $225^\circ$, $270^\circ$,
+$315^\circ$), 5 spatial frequencies (0.04, 0.08, 0.15, 0.32,
+and 0.64~cyc/deg), and 5 temporal frequencies (0.5, 1.6, 2.4,
+6.4, and 12.8~Hz). Each unique stimulus condition
+(direction~$\times$~SF~$\times$~TF) was presented for
+[duration, e.g., 2]~s, followed by a mean-luminance gray
+screen inter-stimulus interval of [duration, e.g., 1]~s. Each
+condition was repeated 7--8 times in pseudo-random order. A
+blank (mean-luminance) condition of equal duration was
+interleaved to serve as a baseline.
+
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1\linewidth]{figures/_twophoton_responses.pdf}
-  \caption{Two-photon calcium imaging of neuronal responses in ferret 
-  visual cortex. \textit{A}: Field of view showing fluorescently 
-  labeled neurons imaged with a two-photon microscope. 
-  \textit{B}: Fluorescence response traces ($\delta$F/F) for the first two
-  individual cells in response to visual stimulation. 
-  Solid horizontal lines indicate baseline; dashed lines indicate 
-  $\pm$1 standard deviation. Error bars represent Standard Error of the Mean across trials.}
-  \label{fig:twophoton_responses}
+  \includegraphics[width=\linewidth]{figures/_ferret_stimulus.pdf}
+  \caption{Experimental setup and visual stimulus design.
+    (\textit{A})~Schematic of the two-photon calcium imaging
+    preparation. A cranial window was implanted over ferret V1,
+    and neuronal activity was recorded with a two-photon
+    microscope while the animal viewed visual stimuli on a
+    monitor positioned contralateral to the imaged hemisphere.
+    (\textit{B})~Stimulus parameter space. Drifting sinusoidal
+    gratings were presented at 8 directions, 5 spatial
+    frequencies (0.04--0.64~cyc/deg), and 5 temporal frequencies
+    (0.5--12.8~Hz). Not all SF~$\times$~TF combinations were
+    tested in every session.}
+  \label{fig:experimental_setup}
 \end{figure}
+
+
+
+Not all SF~$\times$~TF combinations were presented in every
+recording session. In some sessions, only a subset of spatial
+frequencies was tested (as few as a single SF =
+0.15~cyc/deg), and one session included an additional
+condition at TF = 3~Hz with SF = 0.15~cyc/deg. Cells recorded
+with fewer than the full complement of spatial frequencies
+were excluded from analyses requiring across-SF comparisons.
+The typical stimulus set for analysis comprised
+5~SF~$\times$~5~TF~$\times$~8~directions = 200 unique
+conditions.
+
+
+
+% ----------------------------------------------------------------
+\section{Image Processing and Cell Identification}
+\label{sec:image_processing}
+% ----------------------------------------------------------------
+
+Acquired image sequences were processed and analyzed using
+\texttt{twophotonbulkload}, a MATLAB graphical user interface
+developed by the Van Hooser Laboratory
+(\url{https://github.com/VH-Lab/vhlab-TwoPhoton-matlab}).
+Motion correction was performed via rigid registration to a
+time-averaged reference frame.
+
+Regions of interest (ROIs) corresponding to individual cell
+bodies were identified manually by an experienced observer
+using the \texttt{twophotonbulkload} GUI
+(Figure~\ref{fig:example_cells}). ROIs were drawn as circles
+with a diameter of approximately [8] pixels, matched to the
+typical soma size at the imaging magnification used. Cells
+were selected based on clearly identifiable somata in the
+time-averaged fluorescence image; non-somatic signals (e.g.,
+dendrites, blood vessels, and neuropil-dominated regions)
+were excluded. All ROI data were saved in the Neuroscience
+Data Interface (NDI) format \citep{GarciaMurillo2022}.
+
+For each ROI, the raw fluorescence time series $F(t)$ was
+extracted as the mean pixel intensity within the ROI at each
+frame. The fractional change in fluorescence was then
+calculated as
+%
+\begin{equation}
+  \frac{\Delta F}{F_0}(t) \;=\;
+    \frac{F(t) - F_0}{F_0},
+  \label{eq:dff}
+\end{equation}
+%
+where $F_0$ is the baseline fluorescence, defined as the
+[mean fluorescence during blank (mean-luminance) epochs /
+mean of the pre-stimulus period for each trial].
+
+The spatial coordinates $(x_i, y_i)$ of each neuron were
+recorded as the centroid of its ROI in the imaging field,
+expressed in pixels. These coordinates were used for all
+subsequent spatial analyses.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/_twophoton_responses.pdf}
+  \caption{Two-photon calcium imaging of neuronal responses in
+    ferret visual cortex.
+    (\textit{A})~Representative time-averaged fluorescence image
+    of a two-photon FOV in ferret V1. Cell bodies were manually
+    identified using the \texttt{twophotonbulkload} GUI and are
+    outlined as ROIs.
+    (\textit{B})~Example direction tuning curves for
+    two representative cells at selected SF~$\times$~TF
+    conditions, illustrating the diversity of tuning profiles
+    observed in the population. Error bars indicate
+    $\pm$~SEM across trials.}
+  \label{fig:example_cells}
+\end{figure}
+
+
+% ----------------------------------------------------------------
+\section{Data Analysis}
+\label{sec:analysis}
+% ----------------------------------------------------------------
+
+All analyses were performed in MATLAB R2024b
+(MathWorks, Natick, MA) using custom scripts. Analysis code is available at \url{https://github.com/VH-Lab/vhlab-tpdirection-matlab} upon request.
+
+% ---- 2.6.1  Visual responsiveness ----
+\subsection{Visual Responsiveness}
+\label{sec:responsiveness}
+
+To identify visually responsive neurons, a one-way analysis of
+variance (ANOVA) was performed for each cell, testing whether
+the mean $\Delta F/F_0$ differed significantly across stimulus
+conditions (including the blank condition). Cells were
+classified as visually responsive if $p \leq 0.05$. Only
+responsive cells were included in subsequent analyses. Across
+all animals and FOVs, a total of [N] neurons were imaged, of
+which [N] ([X]\%) met the responsiveness criterion and were
+retained for analysis.
+
+% ---- 2.6.2  Tuning curves ----
+\subsection{Direction and Orientation Tuning Curves}
+
+For each neuron and each SF~$\times$~TF combination, a
+direction tuning curve was constructed by computing the mean
+$\Delta F/F_0$ response across trials for each of the 8
+directions. The orientation tuning curve was derived by
+collapsing opposite directions (i.e., averaging responses at
+$\theta$ and $\theta + 180^\circ$), yielding 4 orientation
+conditions.
+
+% ---- 2.6.3  Selectivity indices ----
+\subsection{Direction and Orientation Selectivity Indices}
+
+The direction selectivity index (DSI) was computed as the
+normalized length of the mean resultant vector in direction
+space:
+%
+\begin{equation}
+  \text{DSI} \;=\;
+    \frac{\left|\sum_{k} R_k \, e^{i\theta_k}\right|}
+         {\sum_{k} R_k},
+  \label{eq:dsi}
+\end{equation}
+%
+where $R_k$ is the mean response to direction $\theta_k$ (in
+radians), $i$ is the imaginary unit, and the sum runs over all
+8 directions. DSI ranges from 0 (equal response to all
+directions) to 1 (response to only one direction).
+
+The orientation selectivity index (OSI) was computed
+analogously, but with the direction angles doubled to map
+orientation into a full circle:
+%
+\begin{equation}
+  \text{OSI} \;=\;
+    \frac{\left|\sum_{k} R_k \, e^{i \cdot 2\theta_k}\right|}
+         {\sum_{k} R_k}.
+  \label{eq:osi}
+\end{equation}
+%
+DSI and OSI were computed separately at each SF~$\times$~TF
+condition for every responsive cell.
+
+% ---- 2.6.4  Preferred direction / orientation ----
+\subsection{Preferred Direction and Orientation}
+
+The preferred direction of each neuron at a given
+SF~$\times$~TF condition was defined as the angle of the mean
+resultant vector:
+%
+\begin{equation}
+  \theta_{\text{pref}} \;=\;
+    \arg\!\left(\sum_{k} R_k \, e^{i\theta_k}\right).
+  \label{eq:prefdir}
+\end{equation}
+%
+Similarly, the preferred orientation was computed as
+%
+\begin{equation}
+  \phi_{\text{pref}} \;=\;
+    \tfrac{1}{2}\,\arg\!\left(\sum_{k} R_k \,
+      e^{i \cdot 2\theta_k}\right),
+  \label{eq:prefori}
+\end{equation}
+%
+which yields a value in the range $[0^\circ, 180^\circ)$.
+
+% ---- 2.6.5  Delta-preference ----
+\subsection{Shift in Preferred Direction and Orientation
+  across Temporal Frequency}
+\label{sec:delta_pref}
+
+To quantify how feature preference changed with temporal
+frequency, we computed the absolute shift in preferred
+direction between two reference TF conditions. Unless
+otherwise stated, the low-TF reference was 1.6~Hz and the
+high-TF reference was 6.4~Hz, chosen because these conditions
+were present across all recording sessions.
+
+The absolute direction preference shift was defined as
+%
+\begin{equation}
+  |\Delta\text{direction}| \;=\;
+    \min\!\bigl(|\theta_{\text{pref}}^{\text{high}}
+      - \theta_{\text{pref}}^{\text{low}}|,\;
+    360^\circ - |\theta_{\text{pref}}^{\text{high}}
+      - \theta_{\text{pref}}^{\text{low}}|\bigr),
+  \label{eq:delta_dir}
+\end{equation}
+%
+yielding a value in $[0^\circ, 180^\circ]$. An analogous
+quantity, $|\Delta\text{orientation}|$, was computed using
+preferred orientations and wrapped to $[0^\circ, 90^\circ]$.
+
+These metrics were computed for all responsive cells at each
+of the 5 spatial frequencies independently, to assess whether
+the magnitude or prevalence of preference shifts depended on
+SF.
+
+% ---- 2.6.6  Functional maps ----
+\subsection{Functional Preference Maps}
+
+To visualize the spatial organization of feature preferences,
+each neuron was plotted at its $(x_i, y_i)$ coordinates in the
+FOV and color-coded by its preferred direction (using a
+circular colormap spanning $0^\circ$--$360^\circ$) or preferred
+orientation ($0^\circ$--$180^\circ$). Separate maps were
+generated for each TF condition to allow visual comparison of
+map topology across temporal frequencies.
+
+Preference-shift maps were constructed by plotting
+$|\Delta\text{direction}|$ as a vector at each cell's
+location, with vector length proportional to the magnitude of
+the shift and vector angle indicating the direction of the
+shift. These maps were used to qualitatively assess whether
+large preference shifts were spatially clustered or uniformly
+distributed across the FOV.
+
+% ---- 2.6.7  Pairwise spatial analysis ----
+\subsection{Pairwise Spatial Analysis of Preference Shifts}
+\label{sec:pairwise}
+
+To quantify the spatial structure of preference shifts, we
+computed pairwise statistics across all cell pairs within each
+FOV. For each pair of neurons $i$ and $j$, we calculated the
+Euclidean distance $d_{ij}$ between their spatial coordinates
+(in pixels) and the absolute difference in their direction
+preference shifts,
+$|\Delta\text{dir}_i - \Delta\text{dir}_j|$.
+
+These pairwise measurements were binned by inter-cell distance
+into 20 equally spaced bins spanning 0 to 500 pixels, and the
+mean $|\Delta\text{shift}|$ was computed within each distance
+bin. This analysis tests whether nearby cells undergo more
+similar preference shifts than distant cells, which would
+indicate a spatially organized mechanism underlying
+TF-dependent retuning.
+
+[If you used a statistical test: Significance of the
+distance--similarity relationship was assessed using a
+permutation test (N = 1000 shuffles). The null distribution
+was generated by randomly permuting cell identities while
+preserving the spatial layout, thereby destroying any spatial
+structure in $\Delta\text{shift}$ while maintaining the overall
+distribution of pairwise distances.]
+
+
+% ================================================================
+%  BIBLIOGRAPHY ENTRIES NEEDED (add to your .bib file):
+%
+%  VanHooser2015 — Van Hooser SD, Johnson EN, Li Y, et al.
+%    "Practical Methods for In Vivo Cortical Physiology with
+%    2-Photon Microscopy and Bulk Loading of Fluorescent
+%    Calcium Indicator Dyes." Neuroscience Methods, 2015.
+%
+%  Smith2016 — Smith GB, Whitney DE, Fitzpatrick D.
+%    "Viral Injection and Cranial Window Implantation for
+%    In Vivo Two-Photon Imaging." Neuroscience Methods, 2016.
+%
+%  GarciaMurillo2022 — García Murillo D, Rogovin O, et al.
+%    "NDI: A platform-independent data interface and database
+%    for neuroscience physiology and imaging experiments."
+%    eNeuro, 2022.
+%
+%  Brainard1997 — Brainard DH. "The Psychophysics Toolbox."
+%    Spatial Vision, 1997.
+%
+%  Pelli1997 — Pelli DG. "The VideoToolbox software for visual
+%    psychophysics." Spatial Vision, 1997.
+% ================================================================
+
+% ================================================================
+%  Figure placements for Methods
+% ================================================================
+
 
 \chapter{Results}
 
