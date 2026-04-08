@@ -429,7 +429,7 @@ interleaved to serve as a baseline.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{figures/_ferret_stimulus.pdf}
-  \caption{Experimental setup and visual stimulus design.
+  \caption[Experimental setup and visual stimulus design.]{\textbf{Experimental setup and visual stimulus design.} 
     (\textit{A})~Schematic of the two-photon calcium imaging
     preparation. A cranial window was implanted over ferret V1,
     and neuronal activity was recorded with a two-photon
@@ -506,8 +506,9 @@ subsequent spatial analyses.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{figures/_twophoton_responses.pdf}
-  \caption{Two-photon calcium imaging of neuronal responses in
-    ferret visual cortex.
+  \caption[Two-photon calcium imaging of neuronal responses in
+    ferret visual cortex.]{\textbf{Two-photon calcium imaging of neuronal responses in
+    ferret visual cortex.}
     (\textit{A})~Representative time-averaged fluorescence image
     of a two-photon FOV in ferret V1. Cell bodies were manually
     identified using the \texttt{twophotonbulkload} GUI and are
@@ -688,7 +689,7 @@ TF-dependent retuning.
 
 To characterize how direction and orientation preference in ferret
 primary visual cortex depend on temporal frequency, we analyzed
-two-photon calcium imaging data acquired from \textit{N} ferrets
+two-photon calcium imaging data acquired from \textit{7} ferrets
 (Table~1), focusing on the response of individual neurons to
 drifting sinusoidal gratings varying in direction (8 equally
 spaced angles), spatial frequency (SF; 0.04--0.64\,c/deg), and
@@ -815,7 +816,20 @@ and 6.4\,Hz.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\textwidth]{figures/dirMap_combined}
+
+    \begin{subfigure}[]{\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/_dirMap_separated.pdf}
+        
+        \label{fig:dir_map_singleTF}
+    \end{subfigure}
+    \begin{subfigure}[]{\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{figures/_dirMap_overlapped.pdf}
+        
+      \label{fig:dir_maps}
+    \end{subfigure}
+  
   \caption[Direction preference maps at low and high TF]{%
     \textbf{Direction preference maps at two temporal frequencies.}
     Same format and conditions as Figure~\ref{fig:ori_maps}, but for
@@ -827,7 +841,14 @@ and 6.4\,Hz.
     V1 \citep{Weliky1996, Clemens2012}. The 6.4\,Hz map retains the
     same broad topographic structure but shows more local
     heterogeneity: in several regions, neighboring cells that agree
-    at 1.6\,Hz point in markedly different directions at 6.4\,Hz.
+    at 1.6\,Hz point in markedly different directions at 6.4\,Hz.}
+  \label{fig:dir_radar}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/_dirMap_radar.pdf}
+  \caption[Direction preference polar plots at low and high TF]{%
     Polar histograms confirm a shift in the modal preferred direction
     between TF conditions. Note that regions of strong orientation
     alignment correspond, as expected, to domains in which the
@@ -851,37 +872,39 @@ and visualized both the individual-TF maps and the overlay
 
 \begin{figure}[htbp]
   \centering
-
-    \includegraphics[width=\textwidth]{figures/_oriMap_separated.pdf}
-    \caption[Orientation preference maps at low and high TF]{%
-    \textbf{Orientation preference maps at two temporal frequencies.}
-    \textit{Left}: Orientation selectivity map at TF\,=\,1.6\,Hz
-    (SF\,=\,0.15\,c/deg, $n$\,=\,328 cells). Each cell is
-    represented by a line segment oriented parallel to its preferred
-    orientation, positioned at its cortical location (pixels).
-    \textit{Right}: Analogous map at TF\,=\,6.4\,Hz.
-    }
+    \begin{subfigure}[]{\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{figures/_oriMap_separated.pdf}
+        \caption[Orientation preference maps at low and high TF]{%
+        \textbf{Orientation preference maps at two temporal frequencies.}
+        \textit{Left}: Orientation selectivity map at TF\,=\,1.6\,Hz
+        (SF\,=\,0.15\,c/deg, $n$\,=\,328 cells). Each cell is
+        represented by a line segment oriented parallel to its preferred
+        orientation, positioned at its cortical location (pixels).
+        \textit{Right}: Analogous map at TF\,=\,6.4\,Hz.}
+        \label{fig:ori_map_singleTF}
+    \end{subfigure}
+    \begin{subfigure}[]{\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{figures/_oriMap_overlapped.pdf}
+        \caption[Orientation preference maps at low and high TF]{
+        \textbf{Overlay of both maps at the same cortical locations;
+        cells present at both TFs are plotted together.}
+        Cells in spatially proximal regions tend to share similar
+        preferred orientations at both TF conditions, confirming the
+        presence of a smooth orientation map in ferret V1 at single-cell
+        resolution afforded by two-photon imaging \citep{Ohki2006}.
+        While the gross structure of the map is preserved, local
+        disagreements between the two TF conditions are visible
+        throughout the field of view. The accompanying polar histograms
+        (insets) show the distribution of preferred orientations at each
+        TF; a systematic shift in the modal orientation between 1.6 and
+        6.4\,Hz is apparent, indicating that the population-level
+        orientation preference is not fully invariant to TF.}
+      \label{fig:ori_maps}
+    \end{subfigure}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-    \includegraphics[width=0.8\textwidth]{figures/_oriMap_overlapped.pdf}
-    \caption[Orientation preference maps at low and high TF]{
-    \textbf{Overlay of both maps at the same cortical locations;
-    cells present at both TFs are plotted together.}
-    Cells in spatially proximal regions tend to share similar
-    preferred orientations at both TF conditions, confirming the
-    presence of a smooth orientation map in ferret V1 at single-cell
-    resolution afforded by two-photon imaging \citep{Ohki2006}.
-    While the gross structure of the map is preserved, local
-    disagreements between the two TF conditions are visible
-    throughout the field of view. The accompanying polar histograms
-    (insets) show the distribution of preferred orientations at each
-    TF; a systematic shift in the modal orientation between 1.6 and
-    6.4\,Hz is apparent, indicating that the population-level
-    orientation preference is not fully invariant to TF.}
-  \label{fig:ori_maps}
-\end{figure}
 
 \begin{figure}[htbp]
 \centering
@@ -1070,8 +1093,7 @@ binned these values into a two-dimensional density heatmap
 
 \begin{figure}[htbp]
   \centering
-  % \includegraphics[width=\textwidth]{figures/pairwise_heatmap}
-  % [Figure not yet finalized — placeholder]
+  \includegraphics[width=\textwidth]{figures/_pairwised_heatmap.pdf}
   \caption[Pairwise cortical distance versus TF-shift difference]{%
     \textbf{Pairwise analysis of cortical distance and TF-induced
     preference shift similarity (SF\,=\,0.04\,c/deg,
@@ -1091,7 +1113,7 @@ binned these values into a two-dimensional density heatmap
     random with respect to cortical position: local circuit
     neighbors share similar TF sensitivity, even in the absence
     of discrete ``shift domains'' visible by eye in the vector maps
-    of Figure~\ref{fig:aligned}.}
+    of Figure~\ref{fig:aligned_dir},~\ref{fig:aligned_ori}.}
   \label{fig:pairwise}
 \end{figure}
 
@@ -1108,7 +1130,7 @@ no cortical neighborhood is exclusively composed of either stable
 or unstable cells. Rather, the observed local similarity reflects
 a statistical tendency rather than a strict anatomical
 segregation, consistent with the visual impression from the
-aligned delta-vector maps (Figure~\ref{fig:aligned}).
+aligned delta-vector maps (Figure~\ref{fig:aligned_dir}, ~\ref{fig:aligned_ori}).
 
 Taken together, the results from Aims~\ref{aim:cellevel}
 and~\ref{aim:maplevel} establish that TF-induced changes in
