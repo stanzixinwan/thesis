@@ -3,6 +3,7 @@
 
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{subcaption}
 
 \usepackage{hyperref}
 \usepackage[round]{natbib}
@@ -255,10 +256,10 @@ our laboratory has further demonstrated that speed-tuned neurons in
 ferret V1 are not randomly distributed but form spatially clustered
 domains \citep{Casanova2025}, establishing that a functional map for
 speed exists within V1 itself. The question of how such speed-selective
-organization relates to the direction and orientation maps---and
-particularly, how TF-dependent shifts in direction preference might
+organization relates to the direction and orientation maps,
+particularly how TF-dependent shifts in direction preference might
 reflect or predict the emergence of speed tuning at the population
-level---provides important motivation for the present work, though its
+level, which provides important motivation for the present work, though its
 full characterization lies beyond the scope of this thesis.
 
 % ----------------------------------------------------------------
@@ -326,8 +327,6 @@ And that pattern might also be related to the relative locations of the V1 cells
 %  CHAPTER: Methods
 %  Thesis — Spatiotemporal Tuning in Ferret V1
 %  Data acquisition by Van Hooser Lab; all analyses by the author.
-%  NOTE: Remaining items in [SQUARE BRACKETS] need your
-%        specific details — ask Prof. Van Hooser if unsure.
 % ================================================================
 
 \chapter{Methods}
@@ -394,7 +393,7 @@ Nikon 16$\times$/0.8~NA water-immersion objective. GCaMP6s
 fluorescence was excited at [920]~nm and images were acquired
 at [frame rate]~Hz with a field of view of approximately
 [X~$\times$~Y]~$\mu$m. Each FOV typically contained
-[range, e.g., 50--200] identifiable neurons.
+[range, e.g., 50--200] identifiable n0eurons.
 
 The computational analyses presented in this thesis
 including cell identification, extraction of tuning curves,
@@ -683,18 +682,446 @@ similar preference shifts than distant cells, which would
 indicate a spatially organized mechanism underlying
 TF-dependent retuning.
 
-\chapter{Results}
+% ================================================================
+\chapter[Results]{Results}
+% ================================================================
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=1\linewidth]{figures/_DSI_OSI_vs_TF.pdf}
-    \caption{Population distributions of direction and orientation 
-    selectivity as a function of temporal frequency, across five spatial frequencies. Each panel shows a 2D histogram (color indicates cell count) of selectivity index versus TF (Hz) for cells with $p \leq 0.05$. \textit{Top row}: Direction selectivity index (DSI) versus TF for SF = 0.04, 0.08, 0.15, 0.32, and 0.64 cyc/deg (left to right; $n = 399, 386, 328, 395, 404$ cells, respectively). \textit{Bottom row}: Orientation selectivity index (OSI) versus TF for the same spatial frequencies and cell counts.}
-    \label{fig:dsi_osi_heatmaps}
+To characterize how direction and orientation preference in ferret
+primary visual cortex depend on temporal frequency, we analyzed
+two-photon calcium imaging data acquired from \textit{N} ferrets
+(Table~1), focusing on the response of individual neurons to
+drifting sinusoidal gratings varying in direction (8 equally
+spaced angles), spatial frequency (SF; 0.04--0.64\,c/deg), and
+temporal frequency (TF; 1.6--16\,Hz). All analyses were
+restricted to neurons that passed a one-way ANOVA criterion
+($p \leq 0.05$) for direction or orientation selectivity at the
+relevant TF condition. Unless stated otherwise, the TF comparison
+shown is between the lowest tested TF (1.6\,Hz) and the highest
+(6.4\,Hz), which provided the broadest range across conditions.
+
+
+% ----------------------------------------------------------------
+\section{Single-cell tuning across the SF--TF parameter space}
+% ----------------------------------------------------------------
+
+As a first characterization of response structure, we visualized
+the full direction-by-TF response surface for individual neurons
+across all five SF conditions (Figure~\ref{fig:surf}). For each
+cell, normalized response amplitude (0--1, scaled per cell) is
+displayed as a two-dimensional heatmap with direction along the
+horizontal axis (0--360$^\circ$, 8 directions) and TF along the
+vertical axis (1.6--16\,Hz, 6 levels).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/surf_DirTF_perSF_5cell}
+  \caption[Direction$\times$TF response surfaces for five example
+           neurons]{%
+    \textbf{Direction-by-TF response surfaces for five representative
+    neurons across spatial frequencies.}
+    Each row corresponds to a single neuron; each column to one of
+    five spatial frequencies (SF\,=\,0.04, 0.08, 0.15, 0.32, and
+    0.64\,c/deg, left to right). Within each panel, the horizontal
+    axis denotes stimulus direction (0--360$^\circ$, 8 conditions)
+    and the vertical axis denotes temporal frequency (TF; 1.6--16\,Hz,
+    6 levels). Color encodes normalized $\Delta F/F$ response (0--1,
+    independently scaled per neuron). Several features are apparent.
+    First, responses are sparse: individual neurons respond strongly
+    to only a small subset of SF--TF combinations. Second, the
+    preferred direction (column of peak response) is not fixed across
+    TF levels; in several cells (e.g., Cell\,28, Cell\,332), the
+    peak shifts to a different direction column at high TF compared
+    to low TF. Third, some neurons show negligible responses at
+    certain SF values across all TF and direction conditions,
+    reflecting the well-known SF bandwidth of V1 neurons.}
+  \label{fig:surf}
+\end{figure}
+
+Consistent with prior characterizations of V1 responses using
+drifting gratings \citep{Priebe2006}, neurons exhibited tuned
+responses that were narrowly concentrated in the
+direction--TF parameter space. Notably, the preferred direction
+was not invariant across TF levels in a substantial fraction of
+cells, foreshadowing the population-level analysis described
+below. Cell-to-cell variability was considerable: some neurons
+responded across multiple TF levels while remaining
+direction-selective, whereas others produced significant responses
+at only a narrow range of SF--TF combinations.
+
+
+% ----------------------------------------------------------------
+\section{Direction and orientation selectivity as a function
+  of temporal frequency}
+% ----------------------------------------------------------------
+
+To quantify how the \textit{degree} of direction and orientation
+selectivity varied with TF, we computed the Direction Selectivity
+Index (DSI) and Orientation Selectivity Index (OSI) for each
+neuron at each tested TF, separately for each SF condition, and
+visualized the joint distribution as two-dimensional density
+heatmaps (Figure~\ref{fig:dsi_osi_tf}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/_DSI_OSI_vs_TF}
+  \caption[Population DSI and OSI as a function of TF]{%
+    \textbf{Population-level direction selectivity index (DSI) and
+    orientation selectivity index (OSI) as a function of temporal
+    frequency, across spatial frequencies.}
+    Top row: joint distribution of DSI (vertical axis, 0--1) and TF
+    (horizontal axis, Hz) for neurons passing the ANOVA threshold
+    ($p \leq 0.05$), separately for each SF condition
+    (0.04--0.64\,c/deg, left to right). Bottom row: analogous plots
+    for OSI. Color encodes the percentage of cells in each 2D bin
+    (colorbar, right). For DSI (top), the highest density of
+    direction-selective cells (DSI\,$>$\,0.2) concentrates at
+    low-to-intermediate TF values (1.6--6.4\,Hz) across all SF
+    conditions, with the peak shifting slightly with SF. At high TF
+    ($\geq$\,12.8\,Hz), DSI values are broadly distributed and the
+    concentration of strongly selective cells diminishes. For OSI
+    (bottom), orientation selectivity is more broadly maintained
+    across TF, with the bulk of the population exhibiting OSI in
+    the 0.3--0.6 range across TF levels. Together, these results
+    confirm that direction selectivity is more strongly TF-dependent
+    than orientation selectivity in ferret V1, consistent with prior
+    electrophysiological findings \citep{Moore2005}, while also
+    revealing that OSI itself is not fully TF-invariant.}
+  \label{fig:dsi_osi_tf}
+\end{figure}
+
+These results replicate and extend previous electrophysiological
+findings. Direction selectivity was most pronounced at low to
+intermediate TF values, declining at high TF across all SF
+conditions examined. Orientation selectivity, while more robust
+than direction selectivity across TF, nevertheless showed
+systematic variation: OSI declined at both the lowest and highest
+TF values tested, suggesting that orientation tuning strength
+is partially TF-dependent. This finding is relevant to the
+interpretation of the orientation preference shift analyses
+described below.
+
+
+
+% ----------------------------------------------------------------
+\section{Direction preference maps across temporal frequencies}
+% ----------------------------------------------------------------
+
+To examine whether the spatial organization of direction
+preference is maintained across TF, we constructed from 
+the two-photon cell coordinates in an analogous manner
+(Figure~\ref{fig:dir_maps}), with each cell represented as an
+arrow pointing in the direction of its preferred motion at 1.6
+and 6.4\,Hz.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/dirMap_combined}
+  \caption[Direction preference maps at low and high TF]{%
+    \textbf{Direction preference maps at two temporal frequencies.}
+    Same format and conditions as Figure~\ref{fig:ori_maps}, but for
+    direction preference (arrows oriented along preferred motion
+    direction, 0--360$^\circ$). At 1.6\,Hz, smooth gradients of
+    direction preference are interspersed with sharp fracture lines
+    where the preferred direction reverses by $\sim$180$^\circ$,
+    consistent with the known direction map architecture in ferret
+    V1 \citep{Weliky1996, Clemens2012}. The 6.4\,Hz map retains the
+    same broad topographic structure but shows more local
+    heterogeneity: in several regions, neighboring cells that agree
+    at 1.6\,Hz point in markedly different directions at 6.4\,Hz.
+    Polar histograms confirm a shift in the modal preferred direction
+    between TF conditions. Note that regions of strong orientation
+    alignment correspond, as expected, to domains in which the
+    preferred direction of motion is shared locally---but the
+    direction relationship between the two TF conditions is more
+    variable than the orientation relationship.}
+  \label{fig:dir_maps}
+\end{figure}
+
+
+% ----------------------------------------------------------------
+\section{Orientation preference maps across temporal frequencies}
+% ----------------------------------------------------------------
+
+To examine whether the spatial organization of orientation
+preference is maintained across TF, we constructed
+orientation selectivity maps at 1.6\,Hz and 6.4\,Hz
+(SF\,=\,0.15\,c/deg) from the two-photon cell coordinates,
+and visualized both the individual-TF maps and the overlay
+(Figure~\ref{fig:ori_maps}).
+
+\begin{figure}[htbp]
+  \centering
+
+    \includegraphics[width=\textwidth]{figures/_oriMap_separated.pdf}
+    \caption[Orientation preference maps at low and high TF]{%
+    \textbf{Orientation preference maps at two temporal frequencies.}
+    \textit{Left}: Orientation selectivity map at TF\,=\,1.6\,Hz
+    (SF\,=\,0.15\,c/deg, $n$\,=\,328 cells). Each cell is
+    represented by a line segment oriented parallel to its preferred
+    orientation, positioned at its cortical location (pixels).
+    \textit{Right}: Analogous map at TF\,=\,6.4\,Hz.
+    }
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+    \includegraphics[width=0.8\textwidth]{figures/_oriMap_overlapped.pdf}
+    \caption[Orientation preference maps at low and high TF]{
+    \textbf{Overlay of both maps at the same cortical locations;
+    cells present at both TFs are plotted together.}
+    Cells in spatially proximal regions tend to share similar
+    preferred orientations at both TF conditions, confirming the
+    presence of a smooth orientation map in ferret V1 at single-cell
+    resolution afforded by two-photon imaging \citep{Ohki2006}.
+    While the gross structure of the map is preserved, local
+    disagreements between the two TF conditions are visible
+    throughout the field of view. The accompanying polar histograms
+    (insets) show the distribution of preferred orientations at each
+    TF; a systematic shift in the modal orientation between 1.6 and
+    6.4\,Hz is apparent, indicating that the population-level
+    orientation preference is not fully invariant to TF.}
+  \label{fig:ori_maps}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+    \includegraphics[width=\textwidth]{figures/_oriMap_radar.pdf}
+    \caption[]{The distribution of preferred orientations at each
+    TF; a systematic shift in the modal orientation between 1.6 and
+    6.4\,Hz is apparent, indicating that the population-level
+    orientation preference is not fully invariant to TF.}
+  \label{fig:ori_maps}
+\end{figure}
+
+The orientation maps at low and high TF preserved the hallmark
+features of ferret V1 organization: smooth gradients of
+orientation preference across cortical space, consistent with
+the well-described columnar architecture of carnivore visual
+cortex \citep{Bonhoeffer1991, Weliky1996}. This result represents,
+to our knowledge, the first direct visualization of the ferret
+orientation map at the single-cell resolution afforded by
+two-photon calcium imaging. Importantly, despite the
+preservation of large-scale map topology, the population
+distribution of preferred orientations was not identical between
+the two TF conditions, suggesting that individual cells contribute
+differently to the map depending on the temporal frequency of
+stimulation.
+
+% ----------------------------------------------------------------
+\section{Spatial structure of TF-induced preference shifts}
+% ----------------------------------------------------------------
+
+To directly examine whether TF-induced preference changes carry
+spatial structure on the cortical surface, we constructed aligned
+delta-vector maps for both direction and orientation. For each
+neuron, the preferred direction (or orientation) at the reference
+TF (1.6\,Hz) was rotated to a common reference angle of
+0$^\circ$, displayed as a grey arrow; the identical rotation was
+then applied to that neuron's comparison-TF (6.4\,Hz) preference,
+shown as a colored arrow whose angle encodes the signed shift
+relative to 0$^\circ$. This procedure removes each cell's
+absolute reference preference, making the spatial pattern of
+TF-induced \textit{relative} shifts directly readable from the
+map. Accompanying polar histograms summarize the population-level
+distribution of shift angles.
+
+% Map figures — each gets full width, short caption
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/aligned_dirMap}
+  \caption[Aligned delta-vector map: direction preference]{%
+    \textbf{Aligned delta-vector map of TF-induced direction
+    preference shifts (SF\,=\,0.15\,c/deg,
+    TF: 1.6\,$\to$\,6.4\,Hz, $n$\,=\,322).}
+    Each grey arrow indicates the reference-TF (1.6\,Hz) preferred
+    direction rotated to 0$^\circ$; the colored arrow shows the
+    comparison-TF (6.4\,Hz) preferred direction after the same
+    rotation, with color encoding the signed angular shift
+    (colorbar, degrees). Population-level shift statistics are
+    summarized in Figure~\ref{fig:polar_summary}.}
+  \label{fig:aligned_dir}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/aligned_oriMap}
+  \caption[Aligned delta-vector map: orientation preference]{%
+    \textbf{Aligned delta-vector map of TF-induced orientation
+    preference shifts. Same conditions and format as
+    Figure~\ref{fig:aligned_dir}, but for orientation preference.}
+    The majority of colored arrows are near 0$^\circ$, indicating
+    that most cells retain a similar orientation preference across
+    TF, but a non-negligible fraction show substantial deviations.
+    Population-level statistics are shown in
+    Figure~\ref{fig:polar_summary}.}
+  \label{fig:aligned_ori}
+\end{figure}
+
+% Polar summary — both panels side by side, half page
+\begin{figure}[htbp]
+  \centering
+
+    \includegraphics[width=0.8\textwidth]{figures/shift_radar.pdf}
+
+
+  \caption[Population polar histograms of TF-induced preference
+           shifts]{%
+    \textbf{Population-level polar histograms of TF-induced
+    direction (left) and orientation (right) preference shifts
+    (SF\,=\,0.15\,c/deg, TF: 1.6\,$\to$\,6.4\,Hz).}
+    Color encodes the signed angular shift, matching the colorbars
+    in Figures~\ref{fig:aligned_dir} and~\ref{fig:aligned_ori}.
+    Direction shifts (left) follow a bimodal distribution with
+    a primary peak at 0$^\circ$ (stable cells) and a secondary
+    peak near 180$^\circ$ (direction-reversing cells), with a
+    trough near $\pm$90$^\circ$. Orientation shifts (right) are
+    unimodally concentrated near 0$^\circ$ but with a broader
+    spread than expected under perfect TF-invariance; the
+    distribution is significantly non-uniform (Rayleigh test,
+    $p < 0.05$). The qualitative difference between the two
+    distributions suggests that direction and orientation
+    preference are destabilized by TF changes through partially
+    dissociable mechanisms.}
+  \label{fig:polar_summary}
 \end{figure}
 
 
 
+Visual inspection of both aligned maps showed that large and
+small shifts coexist throughout the imaged cortical field without
+forming discrete ``shift domains.'' No region was exclusively
+populated by reversing cells or by stable cells, for either
+direction or orientation. Nevertheless, the polar histograms
+reveal a qualitatively different pattern for the two features:
+direction shifts are bimodally distributed, with a clear reversal
+population near 180$^\circ$, while orientation shifts are
+unimodally concentrated near 0$^\circ$ but with a non-negligible
+spread. This dissociation suggests that the mechanisms driving
+TF-induced preference instability differ between the direction
+and orientation computations. The spatial intermixing of stable
+and unstable cells motivates the pairwise analysis in
+Section~\ref{sec:pairwise}, which tests for local clustering
+of shift magnitudes more rigorously than visual inspection
+allows.
+
+% ----------------------------------------------------------------
+\section{Population distribution of preference shifts across SF}
+\label{sec:shift_hist}
+% ----------------------------------------------------------------
+
+To quantify how the magnitude of TF-induced preference shifts
+depends on spatial frequency, we computed, for each neuron at
+each SF condition, the absolute angular difference in preferred
+direction ($|\Delta\theta_\text{dir}|$, 0--180$^\circ$) and
+preferred orientation ($|\Delta\theta_\text{ori}|$, 0--90$^\circ$)
+between 1.6 and 6.4\,Hz, and plotted the population distributions
+as histograms (Figure~\ref{fig:shift_hist}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/delta_theta}
+  \caption[Population distributions of TF-induced direction and
+           orientation preference shifts across SF]{%
+    \textbf{Population distributions of absolute TF-induced
+    direction (top, orange) and orientation (bottom, blue)
+    preference shifts, for TF: 1.6\,$\to$\,6.4\,Hz, across
+    five spatial frequency conditions
+    (SF\,=\,0.04--0.64\,c/deg, left to right).}
+    Only neurons passing the ANOVA selectivity criterion
+    ($p \leq 0.05$) at both TF conditions are included; cell
+    counts are given in each panel title.
+    \textit{Direction (top)}: All five SF conditions exhibit a
+    bimodal distribution, with a primary peak near 0$^\circ$
+    (stable cells) and a secondary accumulation near
+    150--180$^\circ$ (direction-reversing cells). The trough
+    near 90$^\circ$ indicates that intermediate shifts are
+    relatively uncommon; cells tend to either remain stable or
+    reverse. The secondary peak near 180$^\circ$ is most
+    prominent at low SF (0.04\,c/deg) and becomes relatively
+    reduced---though not absent---at high SF (0.64\,c/deg),
+    suggesting that direction reversals are more prevalent
+    when the effective speed of the stimulus is high
+    (cf.\ Equation~\ref{eq:speed}).
+    \textit{Orientation (bottom)}: At low SF (0.04 and
+    0.08\,c/deg), the distribution is strongly right-skewed,
+    with most cells showing small shifts but a non-negligible
+    tail extending beyond 30--45$^\circ$. As SF increases, the
+    distribution becomes progressively flatter, approaching
+    uniform at SF\,=\,0.64\,c/deg. This SF-dependent change in
+    skewness indicates that the degree of orientation preference
+    instability across TF is not uniform across the
+    spatiotemporal parameter space.}
+  \label{fig:shift_hist}
+\end{figure}
+
+% ----------------------------------------------------------------
+\section{Pairwise spatial analysis of TF-induced preference shifts}
+% ----------------------------------------------------------------
+
+To test whether cells that shift their direction or orientation
+preference by similar amounts are spatially clustered, we
+performed a pairwise analysis. For every pair of cells within a
+given recording, we computed the absolute difference between
+their TF-induced preference shifts
+($||\Delta\theta_i| - |\Delta\theta_j||$) and the Euclidean
+distance separating them on the cortical surface (pixels), then
+binned these values into a two-dimensional density heatmap
+(Figure~\ref{fig:pairwise}).
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=\textwidth]{figures/pairwise_heatmap}
+  % [Figure not yet finalized — placeholder]
+  \caption[Pairwise cortical distance versus TF-shift difference]{%
+    \textbf{Pairwise analysis of cortical distance and TF-induced
+    preference shift similarity (SF\,=\,0.04\,c/deg,
+    TF: 1.6\,$\to$\,6.4\,Hz).}
+    Each panel is a 2D density heatmap in which the horizontal axis
+    is the Euclidean cortical distance between a cell pair (pixels)
+    and the vertical axis is the absolute difference between the two
+    cells' TF-induced preference shifts. Color encodes pair count.
+    \textit{Left}: Direction. \textit{Right}: Orientation.
+    At short cortical distances ($<$\,100\,pixels), the distribution
+    of pairwise shift differences is concentrated near zero,
+    indicating that nearby cells tend to shift their preference by
+    similar amounts when TF changes. This spatial correlation decays
+    with distance, approaching a uniform distribution at separations
+    exceeding $\sim$300--400\,pixels. This result suggests that
+    TF-induced direction and orientation preference shifts are not
+    random with respect to cortical position: local circuit
+    neighbors share similar TF sensitivity, even in the absence
+    of discrete ``shift domains'' visible by eye in the vector maps
+    of Figure~\ref{fig:aligned}.}
+  \label{fig:pairwise}
+\end{figure}
+
+The pairwise heatmaps revealed a weak but consistent spatial
+structure in TF-induced preference shifts. At short cortical
+distances, neighboring cell pairs were more likely to exhibit
+similar shift magnitudes than would be expected under spatial
+randomness, for both direction and orientation. This spatial
+correlation was present across SF conditions, though its
+magnitude varied. The effect was modest in absolute terms: the
+shift-difference distribution at short distances overlapped
+substantially with that at longer distances, indicating that
+no cortical neighborhood is exclusively composed of either stable
+or unstable cells. Rather, the observed local similarity reflects
+a statistical tendency rather than a strict anatomical
+segregation, consistent with the visual impression from the
+aligned delta-vector maps (Figure~\ref{fig:aligned}).
+
+Taken together, the results from Aims~\ref{aim:cellevel}
+and~\ref{aim:maplevel} establish that TF-induced changes in
+direction and orientation preference in ferret V1 are:
+(\textit{i}) widespread at the single-cell level, with direction
+reversals occurring in a substantial fraction of neurons;
+(\textit{ii}) also present for orientation preference, contrary
+to earlier reports of orientation invariance across TF;
+(\textit{iii}) weakly but significantly organized on the cortical
+surface, such that neighboring neurons tend to shift more
+similarly than distant pairs; and (\textit{iv}) dependent on
+spatial frequency, with the magnitude and distributional form of
+shifts varying systematically with SF.
 
 \chapter{Discussion}
 
