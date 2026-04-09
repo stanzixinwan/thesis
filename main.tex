@@ -14,7 +14,7 @@
 \renewcommand{\bibsection}{\chapter*{References}\addcontentsline{toc}{chapter}{References}
 }
 
-\title{Investigating the Organization of Spatiotemporal and Direction Tuning in the Primary Visual Cortex}
+\title{The Organization of Spatiotemporal and Direction Tuning in the Primary Visual Cortex}
 \author{Stan Wan}
 
 \graduationmonth{May}
@@ -36,7 +36,41 @@
 % Contain the double spacing in an environment so it doesn't affect the abstract
 \begin{doublespacing}
 
-something about acknowledgment
+This thesis would not have been possible without the support,
+guidance, and generosity of many people, and I am grateful for
+the opportunity to acknowledge them here.
+
+First and foremost, I would like to thank my advisor, Professor
+Stephen Van Hooser, for welcoming me into his laboratory and
+for his patient mentorship throughout this project. Steve's
+guidance has shaped not only the scientific content of this
+thesis but also the way I approach research as a whole: his
+willingness to spend time at the whiteboard working through a
+confusing result, his insistence on letting the data lead the
+interpretation, and his trust in giving me the freedom to
+pursue my own analyses while always being available when I
+needed direction, have been formative experiences for me as
+a young scientist. 
+
+I am deeply indebted to the members of the Van Hooser
+Laboratory who collected the two-photon calcium imaging data
+that this thesis is built upon. Without their careful surgical
+work, imaging sessions, and the years of methodological
+development that preceded my arrival in the lab, none of the
+analyses in this thesis would exist. 
+
+I am grateful to the Brandeis University Department of Biology
+and the Neuroscience Program for the educational foundation
+that made this project possible, and to the IACUC and animal
+care staff whose work ensures that research with ferrets is
+conducted humanely and rigorously.
+
+Finally, I would like to thank my family. To my parents, 
+thank you for your unwavering support of
+my education and for trusting me to find my own path, even
+when that path took me far from home. Your encouragement has
+meant more to me than I can express in a few sentences here.
+
 
 \end{doublespacing}
 
@@ -45,7 +79,11 @@ something about acknowledgment
 
 \begin{thesis-abstract}
 \addcontentsline{toc}{chapter}{Abstract}
-abstract, can be written after finishing other parts
+How the primary visual cortex (V1) encodes the dynamic properties of moving stimuli remains a central question in systems neuroscience. Classically, individual V1 neurons are characterized by their preferred direction and orientation at a single temporal frequency (TF), often with the assumption that these preferences are stable properties of the cell. This thesis investigates the stability and spatial organization of direction and orientation tuning across varying temporal frequencies in the primary visual cortex of the ferret (\textit{Mustela putorius furo}). Using in vivo two-photon calcium imaging, we recorded the population responses of V1 neurons to drifting sinusoidal gratings across multiple spatial and temporal frequencies. 
+
+At the single-cell level, we found that preferred direction is not invariant; a substantial fraction of neurons shifted their direction preference between low (1.6 Hz) and high (6.4 Hz) temporal frequencies, with many undergoing a near-$180^{\circ}$ reversal. Contrary to prior single-unit reports, orientation preference also exhibited systematic TF-induced shifts, accompanied by a broader population-level decline in orientation selectivity. At the population level, while the macroscopic topology of the direction and orientation maps remained intact, pairwise spatial analysis revealed a weak but consistent local structure: neighboring neurons were more likely to exhibit similar TF-induced preference shifts than distant neurons. Furthermore, the magnitude of these shifts varied systematically with the spatial frequency of the stimulus. 
+
+Together, these findings challenge the traditional view of V1 functional maps as fixed representations, demonstrating instead that direction and orientation preferences are stimulus-dependent constructs whose variability is locally organized across the cortical surface.
 
 \end{thesis-abstract}
 
@@ -208,7 +246,7 @@ Electrophysiological recordings in cat V1 demonstrated that the
 preferred direction of motion for a substantial fraction of neurons
 shifts substantially when temporal frequency is varied
 \citep{Moore2005}. Some cells reverse their preferred direction
-entirely---responding preferentially to rightward motion at low TF but
+entirely: responding preferentially to rightward motion at low TF but
 leftward motion at high TF. This finding implies that the direction map,
 as measured at a single TF, may be an incomplete or misleading
 description of the true directional tuning landscape of V1. In the same
@@ -234,8 +272,8 @@ present study is positioned to address.
 Beyond the question of preference stability, the joint encoding of SF
 and TF by V1 neurons is relevant to a deeper computational question:
 whether V1 encodes stimulus speed. A longstanding view held that
-explicit speed tuning---the encoding of object velocity invariant to the
-spatial pattern of the stimulus---was a property of extrastriate areas,
+explicit speed tuning (\textit{i.e.}, the encoding of object velocity invariant to the
+spatial pattern of the stimulus) was a property of extrastriate areas,
 most prominently the middle temporal area (MT/V5), rather than V1
 itself. Under this view, V1 neurons were modeled as spatiotemporally
 separable filters: the preferred SF and preferred TF were considered
@@ -309,7 +347,7 @@ aims are pursued:
 Together, these aims provide a population-level, spatially resolved
 characterization of how temporal frequency modulates the directional
 and orientational tuning landscape of ferret V1. The findings
-contribute to a revised understanding of V1 functional maps-not as
+contribute to a revised understanding of V1 functional maps, not as
 fixed representations of feature preferences, but as stimulus-dependent
 structures whose organization may reflect the underlying spatiotemporal
 computations performed by local cortical circuits.
@@ -513,7 +551,7 @@ Regions of interest (ROIs) corresponding to individual cell
 bodies were identified manually by an experienced observer
 using the \texttt{twophotonbulkload} GUI
 (Figure~\ref{fig:example_cells}). ROIs were drawn as circles
-with a diameter of approximately [8] pixels, matched to the
+with a diameter of approximately 8 pixels, matched to the
 typical soma size at the imaging magnification used. Cells
 were selected based on clearly identifiable somata in the
 time-averaged fluorescence image; non-somatic signals (e.g.,
@@ -1055,8 +1093,8 @@ distribution of shift angles.
   \includegraphics[width=0.6\textwidth]{figures/aligned_oriMap}
   \caption[Aligned delta-vector map: orientation preference]{%
     \textbf{Aligned delta-vector map of TF-induced orientation
-    preference shifts. Same conditions and format as
-    Figure~\ref{fig:aligned_dir}, but for orientation preference.}
+    preference shifts.} Same conditions and format as
+    Figure~\ref{fig:aligned_dir}, but for orientation preference.
     The majority of colored arrows are near 0$^\circ$, indicating
     that most cells retain a similar orientation preference across
     TF, but a non-negligible fraction show substantial deviations.
@@ -1347,7 +1385,7 @@ is that TF-dependent preference shifts reflect the spatial
 structure of some underlying functional map that is not itself
 visualized here---most notably, the recently described
 functional architecture for stimulus speed in ferret V1
-\citep{SuarezCasanova2025}, in which speed-tuned neurons form
+\citep{Casanova2025}, in which speed-tuned neurons form
 spatially clustered domains. If cells in a speed domain are
 driven by TF/SF inputs that are preferentially coupled to a
 particular motion direction, the TF-induced reversal of
