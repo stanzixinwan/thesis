@@ -318,10 +318,53 @@ fixed representations of feature preferences, but as stimulus-dependent
 structures whose organization may reflect the underlying spatiotemporal
 computations performed by local cortical circuits.
 
-\chapter[short-version]{Verbose version: The effect of TF on Direction tuning}
+\chapter[short-version]{Verbose Version: The Effect of Temporal Frequency on Direction and Orientation Tuning}
+The primary visual cortex (V1) is the first cortical region to
+process visual information, and a central question in visual
+neuroscience is how its neurons represent the direction and
+orientation of moving objects. For decades, V1 has been
+characterized by measuring each neuron's preferred direction
+and orientation at a single stimulus speed, treating these
+preferences as fixed properties of the cell. Prior work in
+anesthetized cats had already hinted that preferred direction
+can change when the temporal frequency (TF) of a drifting
+grating (how quickly the stimulus pattern moves past a fixed
+point in space) is varied, but orientation preference was
+reported to be invariant. Whether these observations hold in
+ferret V1, whether they can be seen at the scale of entire
+neuronal populations rather than a handful of recorded cells,
+and whether the cells that change their preferences are
+distributed randomly or in organized clusters across the
+cortex, were all open questions.
 
-Understanding that ori/dir preference might not be fixed as spatial/temporal frequency varies.\\
-And that pattern might also be related to the relative locations of the V1 cells.\\
+This thesis uses two-photon calcium imaging data from ferret
+V1--a technique that allows simultaneous recording from
+hundreds of neurons at single-cell resolution--to ask how
+direction and orientation preferences change when TF is varied,
+and whether those changes are spatially organized. At the
+single-cell level, a substantial fraction of neurons changed
+their preferred direction when TF was increased from 1.6\,Hz to
+6.4\,Hz, with many cells reversing their preferred direction by
+nearly 180$^\circ$. Orientation preference, previously assumed
+to be stable across TF, also shifted systematically in a
+non-negligible fraction of cells, which is a finding that complicates
+the earlier view of orientation tuning as a TF-invariant
+property of V1. At the population level, the large-scale
+topology of both the direction and orientation maps was
+preserved across TF conditions, consistent with the classical
+columnar organization of ferret V1. However, closer analysis
+revealed that cells with similar TF-induced preference shifts
+tended to be spatially clustered: neighboring neurons shifted
+their preferences by similar amounts more often than distant
+neurons did, indicating a weak but consistent spatial structure
+to TF-induced retuning. These effects varied with the spatial
+frequency of the stimulus, suggesting that the instability of
+direction and orientation preferences across TF is itself shaped
+by the spatiotemporal parameters of the visual input. Together,
+the results suggest that V1 functional maps are not rigid
+representations of fixed feature preferences, but stimulus-dependent
+structures whose local organization reflects the underlying
+spatiotemporal computations performed by cortical circuits.
 
 % ================================================================
 %  CHAPTER: Methods
@@ -851,13 +894,13 @@ cells.
   \centering
   \begin{subfigure}[]{\textwidth}
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/_dirMap_separated.pdf}
+    \includegraphics[width=0.8\textwidth]{figures/_dirMap_separated.pdf}
     \caption{Single-TF maps at 1.6\,Hz (left) and 6.4\,Hz (right).}
     \label{fig:dir_map_singleTF}
   \end{subfigure}
   \begin{subfigure}[]{\textwidth}
     \centering
-    \includegraphics[width=0.55\textwidth]{figures/_dirMap_overlapped.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/_dirMap_overlapped.pdf}
     \caption{Overlay of both TF conditions at identical cortical
     coordinates.}
     \label{fig:dir_map_overlap}
@@ -932,14 +975,14 @@ orientation preference---often assumed to be TF-invariant
   \centering
   \begin{subfigure}[]{\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{figures/_oriMap_separated.pdf}
+    \includegraphics[width=0.8\textwidth]{figures/_oriMap_separated.pdf}
     \caption{Single-TF maps at 1.6\,Hz (left) and 6.4\,Hz (right).
     }
     \label{fig:ori_map_singleTF}
   \end{subfigure}
   \begin{subfigure}[]{\textwidth}
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/_oriMap_overlapped.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/_oriMap_overlapped.pdf}
     \caption{Overlay of both TF conditions at identical cortical
     coordinates. }
     \label{fig:ori_map_overlap}
@@ -994,10 +1037,10 @@ TF-induced \textit{relative} shifts directly readable from the
 map. Accompanying polar histograms summarize the population-level
 distribution of shift angles.
 
-% Map figures — each gets full width, short caption
+
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/aligned_dirMap}
+  \includegraphics[width=0.6\textwidth]{figures/aligned_dirMap}
   \caption[Aligned delta-vector map: direction preference]{%
     \textbf{Aligned delta-vector map of TF-induced direction
     preference shifts (SF\,=\,0.15\,c/deg,
@@ -1013,7 +1056,7 @@ distribution of shift angles.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/aligned_oriMap}
+  \includegraphics[width=0.6\textwidth]{figures/aligned_oriMap}
   \caption[Aligned delta-vector map: orientation preference]{%
     \textbf{Aligned delta-vector map of TF-induced orientation
     preference shifts. Same conditions and format as
@@ -1054,8 +1097,6 @@ distribution of shift angles.
   \label{fig:polar_summary}
 \end{figure}
 
-
-
 Visual inspection of both aligned maps showed that large and
 small shifts coexist throughout the imaged cortical field without
 forming discrete ``shift domains.'' No region was exclusively
@@ -1088,7 +1129,7 @@ as histograms (Figure~\ref{fig:shift_hist}).
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\textwidth]{figures/delta_theta}
+  \includegraphics[width=\textwidth]{figures/_delta_angle_histogram.pdf}
   \caption[Population distributions of TF-induced direction and
            orientation preference shifts across SF]{%
     \textbf{Population distributions of absolute TF-induced
@@ -1107,7 +1148,7 @@ as histograms (Figure~\ref{fig:shift_hist}).
     relatively uncommon; cells tend to either remain stable or
     reverse. The secondary peak near 180$^\circ$ is most
     prominent at low SF (0.04\,c/deg) and becomes relatively
-    reduced---though not absent---at high SF (0.64\,c/deg),
+    reduced at high SF (0.64\,c/deg),
     suggesting that direction reversals are more prevalent
     when the effective speed of the stimulus is high
     (cf.\ Equation~\ref{eq:speed}).
@@ -1199,7 +1240,248 @@ shifts varying systematically with SF.
 
 \chapter{Discussion}
 
-Discussion body paragraphs
+This thesis used two-photon calcium imaging in the
+ferret primary visual cortex to characterize, at single-cell
+population resolution, how direction and orientation preference
+depends on the temporal frequency (TF) of drifting grating
+stimuli, and whether TF-induced preference shifts are spatially
+organized on the cortical surface. Four principal findings
+emerged. First, a substantial fraction of ferret V1 neurons
+shifted their preferred direction between low and high TF,
+with many cells reversing by nearly 180$^\circ$, replicating 
+earlier single-unit observations in cat V1 \citep{Moore2005} at 
+the population-level. Second, and contrary to the prior
+conclusion that orientation preference is invariant to TF
+\citep{Moore2005}, we observed systematic TF-induced shifts in
+preferred orientation as well, accompanied by a broader
+TF-dependent decline in orientation selectivity (OSI) that was
+not present for direction selectivity (DSI). Third, the
+large-scale topology of both direction and orientation maps was
+preserved across TF conditions, but pairwise analysis revealed
+a weak but consistent local clustering of shift magnitudes:
+nearby cells tended to undergo similar TF-induced retuning more
+often than distant pairs, without forming discrete ``shift
+domains'' visible to the eye. Fourth, the magnitude and
+distributional form of these shifts depended on spatial
+frequency, with direction reversals most prevalent at low SF
+(high effective stimulus speed) and orientation shifts becoming
+progressively more uniform as SF increased. Taken together,
+these results indicate that direction and orientation
+preferences in ferret V1 are not fixed properties of individual
+neurons but stimulus-dependent quantities whose variability is
+weakly organized in cortical space.
+
+\section{Relationship to prior work on TF-dependent tuning}
+
+The observation that the preferred direction varies with TF in a
+substantial fraction of ferret V1 neurons extends the findings
+of \citet{Moore2005} from cats to ferrets, and from sparse
+single-unit recordings to densely sampled single-cell
+populations. The bimodal distribution of direction shifts we
+observed--with a primary peak at 0$^\circ$ and a secondary
+peak near 180$^\circ$--is consistent with the interpretation
+that TF-induced changes in preferred direction reflect a
+categorical ``reversal'' of a subset of cells rather than
+graded drift across the full range of possible preferences.
+This pattern may arise from the underlying spatiotemporal
+filter structure of complex cells, in which separate
+subunits with different TF tuning dominate the aggregate
+response at different TF values, effectively swapping which
+motion direction drives the cell most strongly as TF changes
+\citep{Adelson1985, Priebe2006}.
+
+The finding that orientation preference is not fully
+TF-invariant diverges from \citet{Moore2005} and deserves
+particular comment. Several factors may account for this
+discrepancy. First, the cat recordings used extracellular
+single-unit sampling, which biases toward highly
+orientation-selective neurons with strong responses; two-photon
+calcium imaging samples more broadly, including cells with
+weaker or more heterogeneous tuning, which may be more
+susceptible to TF-dependent destabilization. Second, ferret and
+cat V1 may differ in the fraction of cells whose orientation
+tuning is built from spatio-temporally inseparable inputs.
+Third, the systematic decline in OSI we observed at high TF
+means that at 6.4\,Hz, orientation tuning is not only shifted
+but also broader; a broader tuning curve is inherently more
+susceptible to apparent preference shifts, since small changes
+in the response profile can translate into larger changes in
+the preferred orientation estimated from the circular mean.
+Whether the orientation shifts we observe reflect a genuine
+reorganization of orientation coding, a measurement consequence
+of broader tuning, or some combination of the two, cannot be
+fully resolved by the present analyses and is an important
+target for future work.
+
+\section*{Spatial organization of preference shifts}
+
+A novel contribution of this thesis is the characterization of
+the spatial organization of TF-induced preference shifts across
+the cortical surface. Two complementary observations emerged.
+On one hand, the large-scale topology of the direction and
+orientation maps was preserved between 1.6 and 6.4\,Hz: smooth
+gradients, fracture lines, and iso-orientation domains were
+visible at both TF conditions, consistent with the classical
+columnar architecture of ferret V1
+\citep{Bonhoeffer1991, Weliky1996}. On the other hand,
+pairwise analysis revealed that nearby cells were more likely
+to share similar shift magnitudes than distant cells, a finding
+that visual inspection of the aligned delta-vector maps alone
+would have missed. The coexistence of these two observations
+suggests that TF-dependent retuning operates \textit{within}
+the existing functional architecture rather than disrupting it:
+the underlying columnar layout remains intact, but local
+neighborhoods of cells share a common susceptibility to
+TF-induced shifts. This is consistent with a view in which
+local cortical circuits, rather than individual cells in
+isolation determine how preference varies with stimulus
+parameters, possibly through shared thalamocortical input or
+shared local recurrent connectivity \citep{Nauhaus2008}.
+
+The fact that no discrete ``shift domains'' were visible by
+eye, despite a statistically detectable pairwise correlation,
+indicates that the spatial clustering of shifts is a
+statistical tendency rather than a strict anatomical
+segregation. This weak-but-consistent organization is
+reminiscent of other sub-map structures in V1, such as the
+fine-scale clustering of spatial frequency preference and the
+cone-shaped geometry of orientation domains revealed by recent
+functional ultrasound imaging \citep{Hu2023}. One possibility
+is that TF-dependent preference shifts reflect the spatial
+structure of some underlying functional map that is not itself
+visualized here---most notably, the recently described
+functional architecture for stimulus speed in ferret V1
+\citep{SuarezCasanova2025}, in which speed-tuned neurons form
+spatially clustered domains. If cells in a speed domain are
+driven by TF/SF inputs that are preferentially coupled to a
+particular motion direction, the TF-induced reversal of
+preferred direction we observe may itself be a signature of the
+speed-tuning machinery being probed through a TF-only slice of
+the stimulus parameter space. Testing this conjecture directly
+will require jointly mapping speed preference and TF-induced
+direction shifts in the same cortical field---a natural
+extension of the analyses presented here, but one that lies
+beyond the scope of this thesis.
+
+\section{Implications for the concept of V1 functional maps}
+
+The classical picture of V1 functional maps treats preferred
+direction and preferred orientation as labels attached to
+individual neurons---properties measured once, at a single
+stimulus condition, and treated as stable. The present results
+argue for a revised view: preferences are not labels but
+measurements, each conditioned on the stimulus used to probe
+them. A cell that prefers rightward motion at 1.6\,Hz may
+prefer leftward motion at 6.4\,Hz; a cell that prefers a
+horizontal edge at one TF may prefer a tilted edge at another.
+The functional map obtained at any single TF is therefore one
+slice through a higher-dimensional, stimulus-dependent tuning
+landscape, and the weak spatial organization of shifts
+observed here suggests that the cortex is structured not only
+to represent these preferences, but also to represent their
+stimulus dependence in a spatially coherent way.
+
+This perspective does not contradict the classical concept of
+columnar functional architecture that the gross topology of the
+direction and orientation maps is preserved across TF
+conditions. What is preserved across TF is
+the scaffolding: the smooth large-scale gradients, the fracture
+lines, the iso-orientation domains. What varies is the
+fine-scale assignment of individual cells to preferences within
+that scaffolding, and this variation is not uniform across
+cortex but is locally shared among neighbors. A complete
+characterization of V1 functional organization therefore
+requires not only single-stimulus maps but also the
+stimulus-dependence of those maps, and not only single-cell
+tuning curves but also the spatial correlation structure of
+how those tuning curves vary with stimulus parameters.
+
+\section{Limitations}
+
+Several limitations of this work should be noted. First, the
+main figures presented here are drawn from a single
+representative animal (Ferret 365 [A], imaged 2020-09-04) and
+a single spatial frequency (0.15\,c/deg) for the map-level and
+pairwise analyses. While the single-cell shift histograms
+(Figure~\ref{fig:shift_hist}) span all five SF conditions, the
+spatial analyses focus on the SF at which tuning is strongest
+in ferret V1. Cross-animal consistency is addressed in the
+Supplementary Material, but a quantitative comparison of map
+topology and pairwise structure across all seven ferrets is a
+natural extension that would strengthen the generality of the
+conclusions.
+
+Second, two-photon calcium imaging reports a slow, nonlinear
+proxy for spiking activity. Small differences in tuning at
+high TF, where individual responses are smaller and noisier,
+may be underestimated or obscured by the indicator dynamics.
+The TF-dependent decline in OSI observed here could, in
+principle, reflect such measurement effects in addition to
+genuine broadening of orientation tuning, though the
+qualitative pattern such as direction reversals, orientation shifts,
+local pairwise clustering is robust to this concern because
+it depends on \textit{changes} in preference rather than
+absolute tuning strength.
+
+Third, the analyses presented here operate on preferred
+direction and preferred orientation as computed from the
+circular mean of the tuning curve. For cells with broad or
+multi-peaked tuning, this summary statistic can be unstable,
+and small changes in the underlying response profile can
+produce large apparent shifts. A more complete future analysis
+would model the full tuning curve at each TF condition and
+classify cells by the nature of their TF-dependence
+(stable, reversing, broadening, etc.) rather than by a single
+scalar shift magnitude.
+
+Fourth, this thesis does not pursue the joint SF$\times$TF tuning 
+structure or manifold-based population analyses that would be needed to connect these
+observations directly to the question of speed encoding. The
+relationship between TF-induced direction reversals and the
+speed-tuning architecture recently described by
+\citet{SuarezCasanova2025} is a compelling next step but is
+not addressed here.
+
+\section{Future directions}
+
+The findings of this thesis suggest several immediate
+extensions. First, a joint analysis of preferred speed and
+TF-induced direction shifts in the same cortical field would
+test whether the direction-reversing population is
+preferentially located within speed-tuned domains. Second,
+extending the pairwise spatial analysis to the full five-SF
+datasets, and to all seven animals, would establish the
+robustness and SF-dependence of the local clustering effect.
+Third, population-level dimensionality reduction (e.g., UMAP
+or related manifold methods) applied to the full direction
+$\times$ SF $\times$ TF response tensor could reveal whether
+cells that shift their preferences together lie on shared
+low-dimensional subspaces of the population activity, which is a
+structural signature that scalar shift analyses cannot detect.
+Finally, the mechanisms that produce TF-dependent preference
+shifts (whether they arise from complex-cell spatiotemporal
+filter structure, from subcortical inputs with TF-dependent
+direction biases, or from local recurrent circuits) remain 
+to be identified and will require targeted perturbation
+experiments to dissect.
+
+\section{Conclusion}
+
+This thesis establishes that direction and orientation
+preferences in ferret V1 are not fixed properties of individual
+neurons but vary systematically with the temporal frequency
+of the probe stimulus, and that these TF-induced shifts are
+weakly but consistently organized in cortical space. The
+classical columnar architecture of V1 is preserved across TF,
+but within that scaffolding, the fine-scale assignment of
+cells to direction and orientation preferences is
+stimulus-dependent, and the stimulus dependence is itself
+spatially structured. These results argue for a revised view
+of V1 functional maps as stimulus conditioned structures
+rather than fixed labels, and they provide a population level,
+spatially resolved foundation for future work connecting
+direction and orientation tuning to the broader question of
+how V1 encodes motion and speed.
 
 
 
@@ -1217,10 +1499,6 @@ Discussion body paragraphs
 
 \section{Details}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus metus in erat varius tincidunt. Nulla diam neque, fringilla a interdum id, vehicula id erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris elementum odio orci. Nam at velit id augue tempus hendrerit. Fusce vestibulum purus eget eros semper, et consectetur libero pellentesque. Phasellus ultricies malesuada erat fringilla luctus. Sed vel sapien vitae diam vestibulum imperdiet non eget nisi.
-
-Fusce suscipit eros ligula. Mauris faucibus in massa nec malesuada. Mauris sit amet vestibulum nibh. Phasellus libero nisl, viverra id tempor vel, ornare id tortor. Nunc at sem a leo tempus dictum. In sed dignissim ipsum. Aenean condimentum vestibulum ligula, et viverra urna. Mauris in risus et nulla lobortis pretium ac a neque. Etiam porttitor enim nec ornare placerat. Proin faucibus nibh eu magna convallis pellentesque.
-
 
 \begin{figure}[t]
     \centering
@@ -1228,9 +1506,5 @@ Fusce suscipit eros ligula. Mauris faucibus in massa nec malesuada. Mauris sit a
     \caption{Sample appendix figure.}
     \label{fig:sampleappendix}
 \end{figure}
-
-Curabitur nec porttitor tortor, eget hendrerit nisl. Vestibulum et lobortis lacus. Donec porta iaculis dolor, in sollicitudin mauris. Pellentesque eget consectetur tellus. Sed a hendrerit turpis. Morbi rhoncus pulvinar mauris, at rutrum eros egestas vel. Aliquam sapien sapien, efficitur nec pharetra eget, vehicula sit amet sapien. Integer in risus nec massa feugiat volutpat vitae vel libero. Phasellus ornare, mauris a maximus pretium, quam nisl mattis nulla, sit amet convallis lectus est a urna.
-
-Quisque enim velit, mollis aliquet posuere at, convallis id tellus. Ut consectetur cursus ligula eget hendrerit. Proin vitae porta sapien, ac dapibus justo. Nulla tincidunt quis eros ut tincidunt. Curabitur aliquam nulla tortor, eu vehicula sem volutpat ut. Suspendisse potenti. Quisque sit amet sapien molestie, blandit est ut, viverra sem. Maecenas dignissim maximus vestibulum. Integer varius risus in justo tincidunt malesuada. Etiam tempor eleifend arcu eget pellentesque.
 
 \end{document}
