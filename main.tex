@@ -242,7 +242,7 @@ a cell tuned to rightward motion at one temporal frequency will remain
 tuned to rightward motion at another. This assumption, however, has
 been directly challenged by experimental evidence.
 
-Electrophysiological recordings in cat V1 demonstrated that the
+Electrophysiological recordings in ferret V1 demonstrated that the
 preferred direction of motion for a substantial fraction of neurons
 shifts substantially when temporal frequency is varied
 \citep{Moore2005}. Some cells reverse their preferred direction
@@ -358,14 +358,13 @@ process visual information, and a central question in visual
 neuroscience is how its neurons represent the direction and
 orientation of moving objects. For decades, V1 has been
 characterized by measuring each neuron's preferred direction
-and orientation at a single stimulus speed, treating these
+and orientation at a single spatial and temporal frequency, treating these
 preferences as fixed properties of the cell. Prior work in
-anesthetized cats had already hinted that preferred direction
+anesthetized ferrets had already hinted that preferred direction
 can change when the temporal frequency (TF) of a drifting
 grating (how quickly the stimulus pattern moves past a fixed
 point in space) is varied, but orientation preference was
-reported to be invariant. Whether these observations hold in
-ferret V1, whether they can be seen at the scale of entire
+reported to be invariant. Whether these observations can be seen at the scale of entire
 neuronal populations rather than a handful of recorded cells,
 and whether the cells that change their preferences are
 distributed randomly or in organized clusters across the
@@ -465,12 +464,11 @@ was implanted to provide optical access
 (Figure~\ref{fig:experimental_setup}A).
 
 In vivo two-photon calcium imaging was performed using a
-[microscope model] two-photon microscope equipped with a
+Brucker IV two-photon microscope equipped with a
 Nikon 16$\times$/0.8~NA water-immersion objective. GCaMP6s
 fluorescence was excited at [920]~nm and images were acquired
 at [frame rate]~Hz with a field of view of approximately
-[X~$\times$~Y]~$\mu$m. Each FOV typically contained
-[range, e.g., 50--200] identifiable n0eurons.
+[X~$\times$~Y]~$\mu$m.
 
 The computational analyses presented in this thesis
 including cell identification, extraction of tuning curves,
@@ -484,9 +482,9 @@ and all spatial analyses were performed by the author.
 Visual stimuli were generated using custom MATLAB code with
 the Psychophysics Toolbox
 \citep[Psychtoolbox-3;][]{Brainard1997, Pelli1997} and
-displayed on a [gamma-corrected monitor] positioned
-[distance, e.g., 25]~cm from the contralateral eye.
-[The ipsilateral eye was occluded with an opaque eye patch.]
+displayed on a gamma-corrected monitor positioned
+25 cm from the contralateral eye.
+The ipsilateral eye was occluded with an opaque patch.
 
 Stimuli consisted of full-field drifting sinusoidal gratings
 presented at [100]\% contrast. Gratings were shown at 8
@@ -496,9 +494,9 @@ $315^\circ$), 5 spatial frequencies (0.04, 0.08, 0.15, 0.32,
 and 0.64~cyc/deg), and 5 temporal frequencies (0.5, 1.6, 2.4,
 6.4, and 12.8~Hz). (Figure~\ref{fig:experimental_setup}B) Each 
 unique stimulus condition (direction~$\times$~SF~$\times$~TF) 
-was presented for [duration, e.g., 2]~s, followed by a mean-luminance gray
-screen inter-stimulus interval of [duration, e.g., 1]~s. Each
-condition was repeated 7–8 times in pseudo-random order. A
+was presented for 5~s, followed by a mean-luminance gray
+screen inter-stimulus interval of 5~s. Each
+condition was repeated 7–8 times in a pseudo-random order. A
 blank (mean-luminance) condition of equal duration was
 interleaved to serve as a baseline.
 
@@ -617,8 +615,8 @@ the mean $\Delta F/F_0$ differed significantly across stimulus
 conditions (including the blank condition). Cells were
 classified as visually responsive if $p \leq 0.05$. Only
 responsive cells were included in subsequent analyses. Across
-all animals and FOVs, a total of [N] neurons were imaged, of
-which [N] ([X]\%) met the responsiveness criterion and were
+all animals and FOVs, a total of 3772 neurons were imaged, of
+which 2362 (62.6\%) met the responsiveness criterion and were
 retained for analysis.
 
 % ---- 2.6.2  Tuning curves ----
@@ -910,7 +908,7 @@ direction organization: smooth gradients of preferred direction
 across the cortical surface, punctuated by sharp fracture lines
 at which the preferred direction reversed by
 $\sim$180$^\circ$, consistent with prior characterizations using
-intrinsic signal imaging \citep{Weliky1996, Clemens2012}. The
+intrinsic signal imaging \citep{Weliky1996}. The
 6.4\,Hz map retained this broad topographic structure but
 displayed substantially more local heterogeneity: in several
 regions, neighboring cells that shared a common preferred
@@ -989,10 +987,7 @@ The orientation maps at low and high TF preserved the hallmark
 features of ferret V1 organization: smooth gradients of
 orientation preference across cortical space, consistent with
 the well-described columnar architecture of carnivore visual
-cortex \citep{Bonhoeffer1991, Weliky1996}. To our knowledge,
-this represents the first direct visualization of the ferret
-orientation map at the single-cell resolution afforded by
-two-photon calcium imaging. Despite the preservation of
+cortex \citep{Bonhoeffer1991, Weliky1996}. Despite the preservation of
 large-scale map topology, the two TF conditions were not
 identical: local disagreements between the 1.6\,Hz and 6.4\,Hz
 orientation assignments were visible throughout the field of
@@ -1283,7 +1278,7 @@ organized on the cortical surface. Four principal findings
 emerged. First, a substantial fraction of ferret V1 neurons
 shifted their preferred direction between low and high TF,
 with many cells reversing by nearly 180$^\circ$, replicating 
-earlier single-unit observations in cat V1 \citep{Moore2005} at 
+earlier single-unit observations in ferret V1 \citep{Moore2005} at 
 the population-level. Second, and contrary to the prior
 conclusion that orientation preference is invariant to TF
 \citep{Moore2005}, we observed systematic TF-induced shifts in
@@ -1307,45 +1302,66 @@ weakly organized in cortical space.
 
 \section{Relationship to prior work on TF-dependent tuning}
 
-The observation that the preferred direction varies with TF in a
+The observation that preferred direction varies with TF in a
 substantial fraction of ferret V1 neurons extends the findings
-of \citet{Moore2005} from cats to ferrets, and from sparse
-single-unit recordings to densely sampled single-cell
-populations. The bimodal distribution of direction shifts we
-observed--with a primary peak at 0$^\circ$ and a secondary
-peak near 180$^\circ$--is consistent with the interpretation
-that TF-induced changes in preferred direction reflect a
-categorical ``reversal'' of a subset of cells rather than
-graded drift across the full range of possible preferences.
-This pattern may arise from the underlying spatiotemporal
-filter structure of complex cells, in which separate
-subunits with different TF tuning dominate the aggregate
-response at different TF values, effectively swapping which
-motion direction drives the cell most strongly as TF changes
+of \citet{Moore2005}, who reported that direction selectivity
+in ferret area 17 is frequently reduced---and occasionally
+reverses---at TFs above or below the preferred. Our densely
+sampled two-photon population recapitulates this effect and
+additionally reveals its distributional structure: the
+bimodal distribution of direction shifts we observed, with a
+primary peak at 0$^\circ$ and a secondary peak near
+180$^\circ$, is consistent with the interpretation that
+TF-induced changes in preferred direction reflect a
+categorical reversal in a subset of cells rather than graded
+drift across the full range of possible preferences. This
+pattern may arise from the underlying spatiotemporal filter
+structure of V1 neurons, in which subunits with different TF
+tuning dominate the aggregate response at different TF
+values, effectively swapping which motion direction drives
+the cell most strongly as TF changes
 \citep{Adelson1985, Priebe2006}.
 
-The finding that orientation preference is not fully
-TF-invariant diverges from \citet{Moore2005} and deserves
-particular comment. Several factors may account for this
-discrepancy. First, the cat recordings used extracellular
-single-unit sampling, which biases toward highly
-orientation-selective neurons with strong responses; two-photon
-calcium imaging samples more broadly, including cells with
-weaker or more heterogeneous tuning, which may be more
-susceptible to TF-dependent destabilization. Second, ferret and
-cat V1 may differ in the fraction of cells whose orientation
-tuning is built from spatio-temporally inseparable inputs.
-Third, the systematic decline in OSI we observed at high TF
-means that at 6.4\,Hz, orientation tuning is not only shifted
-but also broader; a broader tuning curve is inherently more
-susceptible to apparent preference shifts, since small changes
-in the response profile can translate into larger changes in
-the preferred orientation estimated from the circular mean.
-Whether the orientation shifts we observe reflect a genuine
-reorganization of orientation coding, a measurement consequence
-of broader tuning, or some combination of the two, cannot be
-fully resolved by the present analyses and is an important
-target for future work.
+Our orientation results require more careful comparison with
+\citet{Moore2005}. They reported that orientation-tuning
+\emph{bandwidth} (half-width at half-maximum, estimated from
+Gaussian fits) is invariant to TF across their sample of
+ferret V1 neurons, with mean bandwidths of 20--25$^\circ$ at
+every TF tested. Crucially, they did not systematically
+examine whether the \emph{preferred} orientation itself
+shifts with TF; their analyses focused on bandwidth
+stability. Our findings therefore stand in two distinct
+relationships to their work. First, the TF-dependent shifts
+in preferred orientation we observe constitute a novel
+observation rather than a direct contradiction, since this
+quantity was not a primary target of their analysis. Second,
+the systematic decline in OSI we observe at high TF is in
+tension with their bandwidth-invariance result, since a
+declining OSI implies broader (or shallower) tuning at high
+TF.
+
+Several methodological factors may account for this
+divergence, given that both studies used ferret V1. Most
+importantly, \citet{Moore2005} performed extracellular
+single-unit recordings (n = 32 orientation-tuned neurons),
+which biases sampling toward cells with strong, sustained
+spiking and clearly resolvable waveforms---typically the most
+sharply tuned neurons in the population. Two-photon calcium
+imaging samples far more broadly and densely, including cells
+with weaker or more heterogeneous tuning that may be
+disproportionately susceptible to TF-dependent
+destabilization. A second consideration is that broader
+tuning curves are inherently more susceptible to apparent
+preference shifts, since small changes in the response
+profile can translate into larger changes in the preferred
+orientation estimated from the circular mean; the OSI
+decline and the preference shifts we observe may therefore
+be partially coupled phenomena. Whether the orientation
+shifts reflect a genuine reorganization of orientation
+coding, a measurement consequence of broadened tuning at
+high TF, or some combination of the two cannot be fully
+resolved by the present analyses and is an important target
+for future work.
 
 \section*{Spatial organization of preference shifts}
 
@@ -1374,7 +1390,7 @@ shared local recurrent connectivity \citep{Nauhaus2008}.
 
 The fact that no discrete ``shift domains'' were visible by
 eye, despite a statistically detectable pairwise correlation,
-indicates that the spatial clustering of shifts is a
+may indicate that the spatial clustering of shifts is a
 statistical tendency rather than a strict anatomical
 segregation. This weak-but-consistent organization is
 reminiscent of other sub-map structures in V1, such as the
@@ -1395,7 +1411,7 @@ the stimulus parameter space. Testing this conjecture directly
 will require jointly mapping speed preference and TF-induced
 direction shifts in the same cortical field---a natural
 extension of the analyses presented here, but one that lies
-beyond the scope of this thesis.
+beyond the scope of this thesis. At the very least, if there is a map structural basis of the dependence of direction and orientation on TF and SF, it is not apparent yet.
 
 \section{Implications for the concept of V1 functional maps}
 
@@ -1473,7 +1489,7 @@ structure or manifold-based population analyses that would be needed to connect 
 observations directly to the question of speed encoding. The
 relationship between TF-induced direction reversals and the
 speed-tuning architecture recently described by
-\citet{SuarezCasanova2025} is a compelling next step but is
+\citet{Casanova2025} is a compelling next step but is
 not addressed here.
 
 \section{Future directions}
@@ -1536,7 +1552,7 @@ how V1 encodes motion and speed.
 
 \begin{figure}[t]
     \centering
-    This is where a figure would go.
+        \includegraphics[width=\textwidth]{figures/driMap.pdf}
     \caption{Sample appendix figure.}
     \label{fig:sampleappendix}
 \end{figure}
