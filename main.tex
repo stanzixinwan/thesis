@@ -352,53 +352,6 @@ fixed representations of feature preferences, but as stimulus-dependent
 structures whose organization may reflect the underlying spatiotemporal
 computations performed by local cortical circuits.
 
-\chapter[Verbose Version]{Verbose Version: The Effect of Temporal Frequency on Direction and Orientation Tuning}
-The primary visual cortex (V1) is the first cortical region to
-process visual information, and a central question in visual
-neuroscience is how its neurons represent the direction and
-orientation of moving objects. For decades, V1 has been
-characterized by measuring each neuron's preferred direction
-and orientation at a single spatial and temporal frequency, treating these
-preferences as fixed properties of the cell. Prior work in
-anesthetized ferrets had already hinted that preferred direction
-can change when the temporal frequency (TF) of a drifting
-grating (how quickly the stimulus pattern moves past a fixed
-point in space) is varied, but orientation preference was
-reported to be invariant. Whether these observations can be seen at the scale of entire
-neuronal populations rather than a handful of recorded cells,
-and whether the cells that change their preferences are
-distributed randomly or in organized clusters across the
-cortex, were all open questions.
-
-This thesis uses two-photon calcium imaging data from ferret
-V1--a technique that allows simultaneous recording from
-hundreds of neurons at single-cell resolution--to ask how
-direction and orientation preferences change when TF is varied,
-and whether those changes are spatially organized. At the
-single-cell level, a substantial fraction of neurons changed
-their preferred direction when TF was increased from 1.6\,Hz to
-6.4\,Hz, with many cells reversing their preferred direction by
-nearly 180$^\circ$. Orientation preference, previously assumed
-to be stable across TF, also shifted systematically in a
-non-negligible fraction of cells, which is a finding that complicates
-the earlier view of orientation tuning as a TF-invariant
-property of V1. At the population level, the large-scale
-topology of both the direction and orientation maps was
-preserved across TF conditions, consistent with the classical
-columnar organization of ferret V1. However, closer analysis
-revealed that cells with similar TF-induced preference shifts
-tended to be spatially clustered: neighboring neurons shifted
-their preferences by similar amounts more often than distant
-neurons did, indicating a weak but consistent spatial structure
-to TF-induced retuning. These effects varied with the spatial
-frequency of the stimulus, suggesting that the instability of
-direction and orientation preferences across TF is itself shaped
-by the spatiotemporal parameters of the visual input. Together,
-the results suggest that V1 functional maps are not rigid
-representations of fixed feature preferences, but stimulus-dependent
-structures whose local organization reflects the underlying
-spatiotemporal computations performed by cortical circuits.
-
 % ================================================================
 %  CHAPTER: Methods
 %  Thesis — Spatiotemporal Tuning in Ferret V1
@@ -513,7 +466,9 @@ interleaved to serve as a baseline.
     gratings were presented at 8 directions, 5 spatial
     frequencies (0.04--0.64~cyc/deg), and 5 temporal frequencies
     (0.5--12.8~Hz). Not all SF~$\times$~TF combinations were
-    tested in every session.}
+    tested in every session.
+    (\textit{C})~Three-dimensional representation of the full stimulus parameter space (direction~$\times$~SF ~$\times$~TF).
+    }
   \label{fig:experimental_setup}
 \end{figure}
 
@@ -568,8 +523,7 @@ calculated as
 \end{equation}
 %
 where $F_0$ is the baseline fluorescence, defined as the
-mean fluorescence during blank (mean-luminance) epochs /
-mean of the pre-stimulus period for each trial.
+mean fluorescence during blank (mean-luminance) epochs.
 
 The spatial coordinates $(x_i, y_i)$ of each neuron were
 recorded as the centroid of its ROI in the imaging field,
@@ -742,7 +696,7 @@ distributed across the FOV.
 
 % ---- 2.6.7  Pairwise spatial analysis ----
 \subsection{Pairwise Spatial Analysis of Preference Shifts}
-\label{sec:pairwise}
+
 
 To quantify the spatial structure of preference shifts, we
 computed pairwise statistics across all cell pairs within each
@@ -1117,7 +1071,7 @@ distribution of shift angles.
     trough near $\pm$90$^\circ$. Orientation shifts (right) are
     unimodally concentrated near 0$^\circ$ but with a broader
     spread than expected under perfect TF-invariance; the
-    distribution is significantly non-uniform (Rayleigh test,
+    distribution is significantly non-uniform (ANOVA test,
     $p < 0.05$). The qualitative difference between the two
     distributions suggests that direction and orientation
     preference are destabilized by TF changes through partially
@@ -1138,7 +1092,7 @@ spread. This dissociation suggests that the mechanisms driving
 TF-induced preference instability differ between the direction
 and orientation computations. The spatial intermixing of stable
 and unstable cells motivates the pairwise analysis in
-Section~\ref{sec:pairwise}, which tests for local clustering
+the following section, which tests for local clustering
 of shift magnitudes more rigorously than visual inspection
 allows.
 
@@ -1451,7 +1405,7 @@ main figures presented here are drawn from a single
 representative animal (Ferret 365 [A], imaged 2020-09-04) and,
 for the map-level and pairwise spatial analyses, a single
 spatial frequency (SF\,=\,0.15\,c/deg). The single-cell shift
-histograms in the main text (Figure~\ref{fig:shift_hist}) span
+histograms (Figure~\ref{fig:shift_hist}) span
 all five SF conditions, and the Supplementary Material
 (Figures~\ref{fig:all_dirMaps}--\ref{fig:allSF_shift_histogram})
 extends the map-level and population-level analyses to the six
