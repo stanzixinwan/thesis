@@ -1542,44 +1542,135 @@ how V1 encodes motion and speed.
 \end{singlespacing}
 
 
-% If you don't have appendices, remove this command and the chapter below
 \appendix
-
 \chapter{Supplementary Material}
 
-\begin{figure}[t]
+% ----------------------------------------------------------------
+% Supplementary Figure S1: Direction maps across animals
+% ----------------------------------------------------------------
+\begin{figure}[htbp]
     \centering
-        \includesvg[width=0.75\textwidth]{figures/driMap.svg}
-    \caption[Direction Maps: ALL]{}
-    \label{fig:all dir Maps}
+    \includesvg[width=\textwidth]{figures/driMap.svg}
+    \caption[Direction preference maps across all animals]{%
+    \textbf{Direction preference maps at 1.6 and 6.4\,Hz for all
+    imaged animals (SF\,=\,0.15\,c/deg).}
+    Each panel shows the direction preference map for one recording
+    session, with each arrow indicating the preferred motion
+    direction (0--360$^\circ$) of a responsive cell at its cortical
+    location. The low-TF condition is always 1.6\,Hz and the
+    high-TF condition is always 6.4\,Hz; the two TF conditions are
+    shown in different colors within each panel. Ferret 356 (imaged
+    2019-11-12) is not shown because an insufficient number of
+    cells passed the ANOVA responsiveness criterion at both TF
+    conditions to support a meaningful map-level analysis. For the
+    session on 2020-08-21, a different color pair is used because
+    only a reduced set of TF conditions was recorded in that
+    session; however, the two TF values displayed are the same as
+    those used throughout the rest of the thesis. Across the six
+    remaining sessions, the hallmark features of ferret V1 direction
+    organization---smooth gradients of preferred direction
+    punctuated by sharp fracture lines---are visible at both TF
+    conditions, with varying degrees of local disagreement between
+    the two TFs. The session shown in the main text
+    (Figure~\ref{fig:dir_maps}) corresponds to 2020-09-04.}
+    \label{fig:all_dirMaps}
 \end{figure}
 
-\begin{figure}[t]
+% ----------------------------------------------------------------
+% Supplementary Figure S2: Orientation maps across animals
+% ----------------------------------------------------------------
+\begin{figure}[htbp]
     \centering
-        \includesvg[width=0.75\textwidth]{figures/oriMap.svg}
-    \caption[Orientation Maps: ALL]{}
-    \label{fig:sampleappendix}
+    \includesvg[width=\textwidth]{figures/oriMap.svg}
+    \caption[Orientation preference maps across all animals]{%
+    \textbf{Orientation preference maps at 1.6 and 6.4\,Hz for all
+    imaged animals (SF\,=\,0.15\,c/deg).}
+    Same format and conditions as
+    Supplementary Figure~\ref{fig:all_dirMaps}, but for preferred
+    orientation ($-90^\circ$ to $90^\circ$). Each cell is represented
+    by a line segment oriented parallel to its preferred orientation
+    at the indicated TF. As in the direction maps, Ferret 356 is
+    omitted due to insufficient responsive cells at both TFs, and
+    the 2020-08-21 session uses a distinct color pair because a
+    reduced TF set was recorded in that session (the comparison
+    remains 1.6 vs. 6.4\,Hz throughout). Across sessions, smooth
+    gradients of preferred orientation are visible at both TF
+    conditions, consistent with the well-described columnar
+    orientation architecture of ferret V1
+    \citep{Bonhoeffer1991, Weliky1996}. Local disagreements between
+    the two TF conditions are visible in every session, supporting
+    the generality of the TF-dependent orientation preference
+    shifts described in the main text.}
+    \label{fig:all_oriMaps}
 \end{figure}
 
-\begin{figure}[t]
+% ----------------------------------------------------------------
+% Supplementary Figure S3: Pooled polar histograms across animals
+% ----------------------------------------------------------------
+\begin{figure}[htbp]
     \centering
-        \includesvg[width=0.75\textwidth]{figures/aligned_dirMap.svg}
-    \caption[Aligned Direction Maps: All]{}
-    \label{fig:sampleappendix}
-\end{figure}
-
-\begin{figure}[t]
-    \centering
-        \includesvg[width=0.75\textwidth]{figures/aligned_oriMap.svg}
-    \caption[Aligned Orientation Maps: All]{}
-    \label{fig:sampleappendix}
-\end{figure}
-
-\begin{figure}[t]
-    \centering
-        \includegraphics[width=\textwidth]{figures/summary_shift.pdf}
-    \caption[Direction Shift Summary]{}
+    \includegraphics[width=\textwidth]{figures/summary_shift.pdf}
+    \caption[Pooled polar histograms of TF-induced preference shifts
+    across animals]{%
+    \textbf{Pooled population-level polar histograms of TF-induced
+    direction (left) and orientation (right) preference shifts,
+    aggregated across six recording sessions (SF\,=\,0.15\,c/deg,
+    TF: 1.6\,$\to$\,6.4\,Hz, $n$\,=\,1{,}577 cells).}
+    Cells from all six sessions with sufficient responsive
+    populations were pooled, and the polar histograms summarize the
+    signed angular shift in preferred direction and preferred
+    orientation between 1.6 and 6.4\,Hz. Color encodes the signed
+    angular shift, matching the conventions used in the main-text
+    population histograms (Figure~\ref{fig:polar_summary}).
+    The pooled direction distribution preserves the bimodal
+    structure observed in the representative animal, with a
+    primary peak at 0$^\circ$ (stable cells) and a clear secondary
+    peak near 180$^\circ$ (direction-reversing cells); the pooled
+    orientation distribution remains unimodally concentrated near
+    0$^\circ$ but with a non-negligible spread. The consistency of
+    these population-level signatures across animals indicates that
+    the TF-induced shifts described in the main text are not
+    idiosyncratic to the representative session but reflect a
+    general property of ferret V1.}
     \label{fig:summary_shift}
 \end{figure}
 
+% ----------------------------------------------------------------
+% Supplementary Figure S4: Cross-SF pooled shift histograms
+% ----------------------------------------------------------------
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/allSF_shift_histogram.pdf}
+    \caption[Pooled shift histograms across SF conditions and
+    animals]{%
+    \textbf{Pooled population distributions of absolute TF-induced
+    direction (top, orange) and orientation (bottom, blue)
+    preference shifts across all SF conditions and animals, for
+    TF: 1.6\,$\to$\,6.4\,Hz.}
+    Data from all six sessions with sufficient responsive
+    populations are pooled within each SF condition
+    (SF\,=\,0.04--0.64\,c/deg, left to right). Only cells passing
+    the ANOVA selectivity criterion ($p \leq 0.05$) at both TF
+    conditions are included; cell counts are given in each panel
+    title ($n$\,=\,1{,}577--1{,}772 per SF). Histograms show the
+    proportion of cells falling in each angular shift bin.
+    \textit{Direction (top)}: The bimodal distribution observed in
+    the representative animal (Figure~\ref{fig:shift_hist}) is
+    preserved in the pooled dataset, with a primary peak near
+    0$^\circ$ and a secondary accumulation near 150--180$^\circ$.
+    The secondary reversal peak is most prominent at low SF
+    (0.04--0.08\,c/deg) and becomes relatively reduced at high SF
+    (0.32--0.64\,c/deg), consistent with the SF-dependence
+    described in the main text.
+    \textit{Orientation (bottom)}: At low SF (0.04 and
+    0.08\,c/deg), the distribution is strongly right-skewed,
+    with most cells showing small shifts but a tail extending to
+    larger values. As SF increases, the distribution becomes
+    progressively flatter, approaching uniform at the highest SF
+    conditions. The qualitative patterns observed in the
+    representative animal generalize across the pooled population
+    of cells from all six sessions.}
+    \label{fig:allSF_shift_histogram}
+    
+\end{figure}
 \end{document}
