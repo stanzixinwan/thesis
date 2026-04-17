@@ -467,8 +467,7 @@ In vivo two-photon calcium imaging was performed using a
 Brucker IV two-photon microscope equipped with a
 Nikon 16$\times$/0.8~NA water-immersion objective. GCaMP6s
 fluorescence was excited at 920~nm and images were acquired
-at approximately 1~Hz with a field of view of approximately
-[X~$\times$~Y]~$\mu$m.
+at approximately 1~Hz.
 
 The computational analyses presented in this thesis
 including cell identification, extraction of tuning curves,
@@ -487,7 +486,7 @@ displayed on a gamma-corrected monitor positioned
 The ipsilateral eye was occluded with an opaque patch.
 
 Stimuli consisted of full-field drifting sinusoidal gratings
-presented at [100]\% contrast. Gratings were shown at 8
+presented at full contrast. Gratings were shown at 8
 equally spaced directions ($0^\circ$, $45^\circ$, $90^\circ$,
 $135^\circ$, $180^\circ$, $225^\circ$, $270^\circ$,
 $315^\circ$), 5 spatial frequencies (0.04, 0.08, 0.15, 0.32,
@@ -569,8 +568,8 @@ calculated as
 \end{equation}
 %
 where $F_0$ is the baseline fluorescence, defined as the
-[mean fluorescence during blank (mean-luminance) epochs /
-mean of the pre-stimulus period for each trial].
+mean fluorescence during blank (mean-luminance) epochs /
+mean of the pre-stimulus period for each trial.
 
 The spatial coordinates $(x_i, y_i)$ of each neuron were
 recorded as the centroid of its ROI in the imaging field,
@@ -1447,19 +1446,23 @@ tuning curves but also the spatial correlation structure of
 how those tuning curves vary with stimulus parameters.
 
 \section{Limitations}
-
 Several limitations of this work should be noted. First, the
 main figures presented here are drawn from a single
-representative animal (Ferret 365 [A], imaged 2020-09-04) and
-a single spatial frequency (0.15\,c/deg) for the map-level and
-pairwise analyses. While the single-cell shift histograms
-(Figure~\ref{fig:shift_hist}) span all five SF conditions, the
-spatial analyses focus on the SF at which tuning is strongest
-in ferret V1. Cross-animal consistency is addressed in the
-Supplementary Material, but a quantitative comparison of map
-topology and pairwise structure across all seven ferrets is a
-natural extension that would strengthen the generality of the
-conclusions.
+representative animal (Ferret 365 [A], imaged 2020-09-04) and,
+for the map-level and pairwise spatial analyses, a single
+spatial frequency (SF\,=\,0.15\,c/deg). The single-cell shift
+histograms in the main text (Figure~\ref{fig:shift_hist}) span
+all five SF conditions, and the Supplementary Material
+(Figures~\ref{fig:all_dirMaps}--\ref{fig:allSF_shift_histogram})
+extends the map-level and population-level analyses to the six
+animals with sufficient responsive cells, confirming that the
+qualitative map structure and the bimodal/unimodal shift
+distributions generalize across the imaged cohort. A
+corresponding cross-animal treatment of the pairwise spatial
+analysis (Figure~\ref{fig:pairwise}), which would quantitatively
+establish the generality of the local clustering of TF-induced
+shifts, was not pursued within the scope of this thesis and
+remains a natural extension of this work.
 
 Second, two-photon calcium imaging reports a slow, nonlinear
 proxy for spiking activity. Small differences in tuning at
@@ -1468,29 +1471,30 @@ may be underestimated or obscured by the indicator dynamics.
 The TF-dependent decline in OSI observed here could, in
 principle, reflect such measurement effects in addition to
 genuine broadening of orientation tuning, though the
-qualitative pattern such as direction reversals, orientation shifts,
-local pairwise clustering is robust to this concern because
-it depends on \textit{changes} in preference rather than
-absolute tuning strength.
+qualitative patterns reported here (direction reversals,
+orientation shifts, and local pairwise clustering) are robust
+to this concern because they depend on \textit{changes} in
+preference rather than on absolute tuning strength.
 
 Third, the analyses presented here operate on preferred
 direction and preferred orientation as computed from the
 circular mean of the tuning curve. For cells with broad or
-multi-peaked tuning, this summary statistic can be unstable,
-and small changes in the underlying response profile can
-produce large apparent shifts. A more complete future analysis
-would model the full tuning curve at each TF condition and
-classify cells by the nature of their TF-dependence
-(stable, reversing, broadening, etc.) rather than by a single
-scalar shift magnitude.
+multi-peaked tuning, this summary statistic can be unstable:
+small changes in the underlying response profile can produce
+large apparent shifts. A more complete future analysis would
+model the full tuning curve at each TF condition and classify
+cells by the nature of their TF-dependence (e.g., stable,
+reversing, or broadening) rather than by a single scalar shift
+magnitude.
 
-Fourth, this thesis does not pursue the joint SF$\times$TF tuning 
-structure or manifold-based population analyses that would be needed to connect these
-observations directly to the question of speed encoding. The
-relationship between TF-induced direction reversals and the
-speed-tuning architecture recently described by
-\citet{Casanova2025} is a compelling next step but is
-not addressed here.
+Fourth, this thesis does not pursue the joint SF$\times$TF
+tuning structure or manifold-based population analyses that
+would be needed to connect these observations directly to the
+question of speed encoding. The relationship between
+TF-induced direction reversals and the speed-tuning
+architecture recently described by \citet{Casanova2025} is a
+compelling next step, but one that lies beyond the scope of
+the present work.
 
 \section{Future directions}
 
@@ -1545,6 +1549,52 @@ how V1 encodes motion and speed.
 \appendix
 \chapter{Supplementary Material}
 
+The analyses presented in the main text focus primarily on a
+single representative animal (Ferret 365 [A], imaged 2020-09-04)
+at a single spatial frequency (SF\,=\,0.15\,c/deg), chosen to
+allow the map-level and pairwise spatial analyses to be
+presented in detail at full single-cell resolution. This
+supplementary material provides evidence that the core findings
+of the thesis generalize beyond this representative session. All
+supplementary analyses use the same analysis pipeline as the
+corresponding main-text figures unless otherwise noted, and the
+low-/high-TF comparison is always 1.6\,Hz versus 6.4\,Hz.
+
+Of the seven animals listed in Table~\ref{tab:animals}, six are
+represented in the supplementary analyses below. Ferret 356
+(imaged 2019-11-12) is omitted because an insufficient number
+of cells passed the ANOVA responsiveness criterion at both
+reference TFs to support a meaningful population- or map-level
+analysis.
+
+Supplementary Figures~\ref{fig:all_dirMaps}
+and~\ref{fig:all_oriMaps} present direction and orientation
+preference maps at 1.6 and 6.4\,Hz for every session with
+sufficient data, demonstrating that the qualitative features of
+the maps described in the main text are visible across
+animals rather than being peculiar to the representative
+session. Supplementary Figure~\ref{fig:summary_shift} pools
+cells across all six sessions and confirms that the bimodal
+distribution of TF-induced direction shifts and the unimodal but
+spread distribution of TF-induced orientation shifts, reported
+at single-animal resolution in the main text, are both preserved
+in the combined population. Supplementary
+Figure~\ref{fig:allSF_shift_histogram} extends this pooled
+analysis across all five spatial frequency conditions, showing
+that the SF-dependence of shift distributions
+(Figure~\ref{fig:shift_hist} in the main text) also generalizes
+across animals: direction reversals remain most prevalent at low
+SF, and orientation shift distributions flatten as SF increases.
+
+Together, these supplementary analyses indicate that the core
+single-cell and population-level findings of the thesis are not
+artifacts of any single recording session. A comparable
+cross-animal treatment of the map-level pairwise spatial
+analysis (Figure~\ref{fig:pairwise} in the main text) was not
+pursued within the scope of this thesis and is noted as a
+natural extension in the Discussion.
+
+
 % ----------------------------------------------------------------
 % Supplementary Figure S1: Direction maps across animals
 % ----------------------------------------------------------------
@@ -1568,8 +1618,8 @@ how V1 encodes motion and speed.
     session; however, the two TF values displayed are the same as
     those used throughout the rest of the thesis. Across the six
     remaining sessions, the hallmark features of ferret V1 direction
-    organization---smooth gradients of preferred direction
-    punctuated by sharp fracture lines---are visible at both TF
+    organization (smooth gradients of preferred direction
+    punctuated by sharp fracture lines) are visible at both TF
     conditions, with varying degrees of local disagreement between
     the two TFs. The session shown in the main text
     (Figure~\ref{fig:dir_maps}) corresponds to 2020-09-04.}
